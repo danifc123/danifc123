@@ -71,7 +71,3 @@ A Agatha mira nos dois dias com mais commits do último ano e atira teia em cima
   <source media="(prefers-color-scheme: dark)" srcset="assets/agatha-teia-commits-dark.svg">
   <img src="assets/agatha-teia-commits.svg" alt="Agatha atirando teia sobre os dias com mais commits do último ano">
 </picture>
-
----
-
-<sub>Mascote Agatha 🕷️ — desenhada no Claude Design. Projetos em destaque: veja o "Pinned" logo abaixo deste README.</sub>
