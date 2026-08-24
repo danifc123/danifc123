@@ -93,7 +93,7 @@
 
 <br>
 
-## 🧟 Agatha caçando zumbis
+## 🧟 Agatha e Tina caçando zumbis
 
 <div align="center">
 
