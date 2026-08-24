@@ -5,18 +5,23 @@
     #sp{ animation: pernas .5s steps(1) infinite; }
     .eye-normal{ animation: eyeNormal 11s linear infinite; }
     .eye-fury{ animation: eyeFury 11s linear infinite; }
-    @keyframes eyeNormal{ 0%,55.9%{opacity:1} 56%,100%{opacity:0} }
-    @keyframes eyeFury{ 0%,55.9%{opacity:0} 56%,100%{opacity:1} }
+    @keyframes eyeNormal{ 0%,37.9%{opacity:1} 38%,100%{opacity:0} }
+    @keyframes eyeFury{ 0%,37.9%{opacity:0} 38%,100%{opacity:1} }
     #agatha{ animation: recuo 11s linear infinite; }
     @keyframes recuo{
-      0%,21%{transform:translateX(0)} 23%{transform:translateX(-8px)} 27%,51%{transform:translateX(0)}
-      53%{transform:translateX(-8px)} 57%,73%{transform:translateX(0)} 75%{transform:translateX(-8px)}
-      78%,87%{transform:translateX(0)} 89%{transform:translateX(-8px)} 92%,100%{transform:translateX(0)}
+      0%{transform:translateX(0)}
+      7%{transform:translateX(0)} 8%{transform:translateX(-8px)} 11%{transform:translateX(0)} 33%{transform:translateX(0)} 34%{transform:translateX(-8px)} 37%{transform:translateX(0)} 59%{transform:translateX(0)} 60%{transform:translateX(-8px)} 63%{transform:translateX(0)} 85%{transform:translateX(0)} 86%{transform:translateX(-8px)} 89%{transform:translateX(0)}
+      100%{transform:translateX(0)}
     }
     .furia-barra{ animation: cargaBarra 11s linear infinite; }
-    @keyframes cargaBarra{ 0%,23.9%{width:0px} 24%,53.9%{width:30.6px} 54%,55.9%{width:61.2px} 56%,100%{width:90px} }
+    @keyframes cargaBarra{
+      0%,7.9%{width:0px}
+      8%,33.9%{width:30.6px}
+      34%,37.9%{width:61.2px}
+      38%,100%{width:90px}
+    }
     .furia-label{ animation: furiaLabel 11s linear infinite; }
-    @keyframes furiaLabel{ 0%,55.9%{opacity:0} 56%{opacity:1} 60%{opacity:.35} 64%{opacity:1} 100%{opacity:1} }
+    @keyframes furiaLabel{ 0%,37.9%{opacity:0} 38%{opacity:1} 42%{opacity:.35} 46%{opacity:1} 100%{opacity:1} }
   
 
     @keyframes zpose{ 0%,49.9%{--pa:1;--pb:0} 50%,100%{--pa:0;--pb:1} }
@@ -25,98 +30,98 @@
     .zpose-b{ opacity: var(--pb, 0); }
   
 
-      @keyframes zEntra1{ 0%{transform:translateX(220px)} 20%{transform:translateX(6px)} 24%,100%{transform:translateX(0)} }
-      @keyframes zVivo1{ 0%,-0.1%{opacity:1} 0%,36%{opacity:1} 40%,100%{opacity:0} }
-      @keyframes zGray1{ 0%,23.9%{filter:none} 24%,100%{filter:grayscale(.7) brightness(.8)} }
+      @keyframes zEntra1{ 0%,0%{transform:translateX(220px)} 6%{transform:translateX(6px)} 8%,100%{transform:translateX(0)} }
+      @keyframes zVivo1{ 0%,-0.1%{opacity:1} 0%,20%{opacity:1} 24%,100%{opacity:0} }
+      @keyframes zGray1{ 0%,7.9%{filter:none} 8%,100%{filter:grayscale(.7) brightness(.8)} }
       #z1{ animation: zEntra1 11s linear infinite, zVivo1 11s linear infinite; }
       #z1 .zbody{ animation: zbob 0.4s steps(1) infinite, zGray1 11s linear infinite; }
       #z1 .zpx{ animation: zpose .46s steps(1) infinite; }
-      @keyframes zBar1{ 0%,23.9%{width:0px} 24%,34%{width:68px} 40%,100%{width:68px} }
+      @keyframes zBar1{ 0%,7.9%{width:0px} 8%,18%{width:68px} 24%,100%{width:68px} }
       .zbar1{ animation: zBar1 11s linear infinite; }
     
 
-        @keyframes zLento1{ 0%,27%{opacity:0} 28%,34%{opacity:1} 38%,100%{opacity:0} }
+        @keyframes zLento1{ 0%,11%{opacity:0} 12%,18%{opacity:1} 22%,100%{opacity:0} }
         .lento1{ animation: zLento1 11s linear infinite; }
       
 
-      @keyframes teia1{ 0%,23.9%{transform:scale(.2);opacity:0} 24%{transform:scale(1);opacity:1} 32%{transform:scale(1);opacity:1} 36%,100%{transform:scale(1);opacity:0} }
+      @keyframes teia1{ 0%,7.9%{transform:scale(.2);opacity:0} 8%{transform:scale(1);opacity:1} 16%{transform:scale(1);opacity:1} 20%,100%{transform:scale(1);opacity:0} }
       .teia1{ animation: teia1 11s linear infinite; transform-box: fill-box; transform-origin: center; }
       @keyframes tiro1{
-        0%,21%{ transform:translate(146px,154px); opacity:0; }
-        22.4%{ opacity:1; }
-        24%{ transform:translate(625.5px,150px); opacity:1; }
-        24.5%,100%{ transform:translate(625.5px,150px); opacity:0; }
+        0%,5%{ transform:translate(146px,154px); opacity:0; }
+        6.4%{ opacity:1; }
+        8%{ transform:translate(625.5px,150px); opacity:1; }
+        8.5%,100%{ transform:translate(625.5px,150px); opacity:0; }
       }
       .tiro1{ animation: tiro1 11s linear infinite; }
     
 
-      @keyframes zEntra2{ 0%{transform:translateX(260px)} 50%{transform:translateX(6px)} 54%,100%{transform:translateX(0)} }
-      @keyframes zVivo2{ 0%,29.9%{opacity:0} 30%,66%{opacity:1} 70%,100%{opacity:0} }
-      @keyframes zGray2{ 0%,53.9%{filter:none} 54%,100%{filter:grayscale(.7) brightness(.8)} }
+      @keyframes zEntra2{ 0%,26%{transform:translateX(260px)} 32%{transform:translateX(6px)} 34%,100%{transform:translateX(0)} }
+      @keyframes zVivo2{ 0%,25.9%{opacity:0} 26%,46%{opacity:1} 50%,100%{opacity:0} }
+      @keyframes zGray2{ 0%,33.9%{filter:none} 34%,100%{filter:grayscale(.7) brightness(.8)} }
       #z2{ animation: zEntra2 11s linear infinite, zVivo2 11s linear infinite; }
       #z2 .zbody{ animation: zbob 0.46s steps(1) infinite, zGray2 11s linear infinite; }
       #z2 .zpx{ animation: zpose .46s steps(1) infinite; }
-      @keyframes zBar2{ 0%,53.9%{width:0px} 54%,64%{width:68px} 70%,100%{width:68px} }
+      @keyframes zBar2{ 0%,33.9%{width:0px} 34%,44%{width:68px} 50%,100%{width:68px} }
       .zbar2{ animation: zBar2 11s linear infinite; }
     
 
-        @keyframes zLento2{ 0%,57%{opacity:0} 58%,64%{opacity:1} 68%,100%{opacity:0} }
+        @keyframes zLento2{ 0%,37%{opacity:0} 38%,44%{opacity:1} 48%,100%{opacity:0} }
         .lento2{ animation: zLento2 11s linear infinite; }
       
 
-      @keyframes teia2{ 0%,53.9%{transform:scale(.2);opacity:0} 54%{transform:scale(1);opacity:1} 62%{transform:scale(1);opacity:1} 66%,100%{transform:scale(1);opacity:0} }
+      @keyframes teia2{ 0%,33.9%{transform:scale(.2);opacity:0} 34%{transform:scale(1);opacity:1} 42%{transform:scale(1);opacity:1} 46%,100%{transform:scale(1);opacity:0} }
       .teia2{ animation: teia2 11s linear infinite; transform-box: fill-box; transform-origin: center; }
       @keyframes tiro2{
-        0%,51%{ transform:translate(146px,154px); opacity:0; }
-        52.4%{ opacity:1; }
-        54%{ transform:translate(585.5px,150px); opacity:1; }
-        54.5%,100%{ transform:translate(585.5px,150px); opacity:0; }
+        0%,31%{ transform:translate(146px,154px); opacity:0; }
+        32.4%{ opacity:1; }
+        34%{ transform:translate(585.5px,150px); opacity:1; }
+        34.5%,100%{ transform:translate(585.5px,150px); opacity:0; }
       }
       .tiro2{ animation: tiro2 11s linear infinite; }
     
 
-      @keyframes zEntra3{ 0%{transform:translateX(300px)} 72%{transform:translateX(6px)} 76%,100%{transform:translateX(0)} }
-      @keyframes zVivo3{ 0%,61.9%{opacity:0} 62%,83%{opacity:1} 87%,100%{opacity:0} }
-      @keyframes zGray3{ 0%,75.9%{filter:none} 76%,100%{filter:grayscale(.7) brightness(.8)} }
+      @keyframes zEntra3{ 0%,52%{transform:translateX(300px)} 58%{transform:translateX(6px)} 60%,100%{transform:translateX(0)} }
+      @keyframes zVivo3{ 0%,51.9%{opacity:0} 52%,72%{opacity:1} 76%,100%{opacity:0} }
+      @keyframes zGray3{ 0%,59.9%{filter:none} 60%,100%{filter:grayscale(.7) brightness(.8)} }
       #z3{ animation: zEntra3 11s linear infinite, zVivo3 11s linear infinite; }
       #z3 .zbody{ animation: zbob 0.52s steps(1) infinite, zGray3 11s linear infinite; }
       #z3 .zpx{ animation: zpose .46s steps(1) infinite; }
-      @keyframes zBar3{ 0%,75.9%{width:0px} 76%,86%{width:68px} 87%,100%{width:68px} }
+      @keyframes zBar3{ 0%,59.9%{width:0px} 60%,70%{width:68px} 76%,100%{width:68px} }
       .zbar3{ animation: zBar3 11s linear infinite; }
     
 
-        @keyframes zLento3{ 0%,79%{opacity:0} 80%,81%{opacity:1} 85%,100%{opacity:0} }
+        @keyframes zLento3{ 0%,63%{opacity:0} 64%,70%{opacity:1} 74%,100%{opacity:0} }
         .lento3{ animation: zLento3 11s linear infinite; }
       
 
-      @keyframes teia3{ 0%,75.9%{transform:scale(.2);opacity:0} 76%{transform:scale(1);opacity:1} 84%{transform:scale(1);opacity:1} 88%,100%{transform:scale(1);opacity:0} }
+      @keyframes teia3{ 0%,59.9%{transform:scale(.2);opacity:0} 60%{transform:scale(1);opacity:1} 68%{transform:scale(1);opacity:1} 72%,100%{transform:scale(1);opacity:0} }
       .teia3{ animation: teia3 11s linear infinite; transform-box: fill-box; transform-origin: center; }
       @keyframes tiro3{
-        0%,73%{ transform:translate(146px,154px); opacity:0; }
-        74.4%{ opacity:1; }
-        76%{ transform:translate(545.5px,150px); opacity:1; }
-        76.5%,100%{ transform:translate(545.5px,150px); opacity:0; }
+        0%,57%{ transform:translate(146px,154px); opacity:0; }
+        58.4%{ opacity:1; }
+        60%{ transform:translate(545.5px,150px); opacity:1; }
+        60.5%,100%{ transform:translate(545.5px,150px); opacity:0; }
       }
       .tiro3{ animation: tiro3 11s linear infinite; }
     
 
-      @keyframes zEntra4{ 0%{transform:translateX(340px)} 86%{transform:translateX(6px)} 90%,100%{transform:translateX(0)} }
-      @keyframes zVivo4{ 0%,75.9%{opacity:0} 76%,96%{opacity:1} 100%,100%{opacity:0} }
-      @keyframes zGray4{ 0%,89.9%{filter:none} 90%,100%{filter:grayscale(.7) brightness(.8)} }
+      @keyframes zEntra4{ 0%,78%{transform:translateX(340px)} 84%{transform:translateX(6px)} 86%,100%{transform:translateX(0)} }
+      @keyframes zVivo4{ 0%,77.9%{opacity:0} 78%,94%{opacity:1} 98%,100%{opacity:0} }
+      @keyframes zGray4{ 0%,85.9%{filter:none} 86%,100%{filter:grayscale(.7) brightness(.8)} }
       #z4{ animation: zEntra4 11s linear infinite, zVivo4 11s linear infinite; }
       #z4 .zbody{ animation: zbob 0.5800000000000001s steps(1) infinite, zGray4 11s linear infinite; }
       #z4 .zpx{ animation: zpose .46s steps(1) infinite; }
-      @keyframes zBar4{ 0%,89.9%{width:0px} 90%,100%{width:68px} 100%,100%{width:68px} }
+      @keyframes zBar4{ 0%,85.9%{width:0px} 86%,96%{width:68px} 98%,100%{width:68px} }
       .zbar4{ animation: zBar4 11s linear infinite; }
     
 
-      @keyframes teia4{ 0%,89.9%{transform:scale(.2);opacity:0} 90%{transform:scale(1);opacity:1} 98%{transform:scale(1);opacity:1} 102%,100%{transform:scale(1);opacity:0} }
+      @keyframes teia4{ 0%,85.9%{transform:scale(.2);opacity:0} 86%{transform:scale(1);opacity:1} 94%{transform:scale(1);opacity:1} 98%,100%{transform:scale(1);opacity:0} }
       .teia4{ animation: teia4 11s linear infinite; transform-box: fill-box; transform-origin: center; }
       @keyframes tiro4{
-        0%,87%{ transform:translate(146px,154px); opacity:0; }
-        88.4%{ opacity:1; }
-        90%{ transform:translate(505.5px,150px); opacity:1; }
-        90.5%,100%{ transform:translate(505.5px,150px); opacity:0; }
+        0%,83%{ transform:translate(146px,154px); opacity:0; }
+        84.4%{ opacity:1; }
+        86%{ transform:translate(505.5px,150px); opacity:1; }
+        86.5%,100%{ transform:translate(505.5px,150px); opacity:0; }
       }
       .tiro4{ animation: tiro4 11s linear infinite; }
     
@@ -126,38 +131,38 @@
     .wing-up{ opacity: var(--wu, 0); animation: asas .34s steps(1) infinite; }
     .wing-down{ opacity: var(--wd, 1); animation: asas .34s steps(1) infinite; }
     @keyframes tinaVoa{
-      0%{transform:translate(-140px,26px)} 26%{transform:translate(600px,26px)} 40%{transform:translate(645px,26px)} 58%{transform:translate(660px,26px)} 72%{transform:translate(600px,26px)} 74%{transform:translate(625px,26px)} 84%{transform:translate(665px,26px)} 94%{transform:translate(715px,26px)} 100%{transform:translate(750px,26px)}
+      0%{transform:translate(-140px,26px)} 11%{transform:translate(628px,26px)} 24%{transform:translate(660px,26px)} 37%{transform:translate(588px,26px)} 50%{transform:translate(610px,26px)} 63%{transform:translate(548px,26px)} 75%{transform:translate(590px,26px)} 88%{transform:translate(640px,26px)} 100%{transform:translate(700px,26px)}
     }
     #tina{ animation: tinaVoa 11s linear infinite; }
     @keyframes tflutua{ 0%,49.9%{transform:translateY(0)} 50%,100%{transform:translateY(-4px)} }
     #tinaBody{ animation: tflutua .34s steps(1) infinite; }
-    @keyframes olhoTina{ 0%,73.9%{fill:#ff3b21} 74%{fill:#ff2d95} 76%{fill:#f4f1e8} 78%,100%{fill:#ff2d95} }
+    @keyframes olhoTina{ 0%,62.9%{fill:#ff3b21} 63%{fill:#ff2d95} 65%{fill:#f4f1e8} 67%,100%{fill:#ff2d95} }
     .tina-pupil{ animation: olhoTina 11s linear infinite; }
   
 
       @keyframes gota1{
-        0%,25.9%{ transform:translate(630px,46px); opacity:0; }
-        26%{ transform:translate(630px,46px); opacity:1; }
-        28.4%{ transform:translate(628px,150px); opacity:1; }
-        28.5%,100%{ transform:translate(628px,150px); opacity:0; }
+        0%,10.9%{ transform:translate(658px,46px); opacity:0; }
+        11%{ transform:translate(658px,46px); opacity:1; }
+        13.4%{ transform:translate(628px,150px); opacity:1; }
+        13.5%,100%{ transform:translate(628px,150px); opacity:0; }
       }
       .gota1{ animation: gota1 11s linear infinite; }
     
 
       @keyframes gota2{
-        0%,41.9%{ transform:translate(676.6666666666666px,46px); opacity:0; }
-        42%{ transform:translate(676.6666666666666px,46px); opacity:1; }
-        44.4%{ transform:translate(588px,150px); opacity:1; }
-        44.5%,100%{ transform:translate(588px,150px); opacity:0; }
+        0%,36.9%{ transform:translate(618px,46px); opacity:0; }
+        37%{ transform:translate(618px,46px); opacity:1; }
+        39.4%{ transform:translate(588px,150px); opacity:1; }
+        39.5%,100%{ transform:translate(588px,150px); opacity:0; }
       }
       .gota2{ animation: gota2 11s linear infinite; }
     
 
       @keyframes gota3{
-        0%,73.9%{ transform:translate(655px,46px); opacity:0; }
-        74%{ transform:translate(655px,46px); opacity:1; }
-        76.4%{ transform:translate(548px,150px); opacity:1; }
-        76.5%,100%{ transform:translate(548px,150px); opacity:0; }
+        0%,62.9%{ transform:translate(578px,46px); opacity:0; }
+        63%{ transform:translate(578px,46px); opacity:1; }
+        65.4%{ transform:translate(548px,150px); opacity:1; }
+        65.5%,100%{ transform:translate(548px,150px); opacity:0; }
       }
       .gota3{ animation: gota3 11s linear infinite; }
     </style>

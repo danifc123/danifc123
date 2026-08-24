@@ -138,22 +138,26 @@ const BAT_COLORS = {
   tooth: '#f4f1e8', foot: '#120e18', wing: '#1b1622', 'wing-dark': '#120e18',
 };
 
-// zumbi N: entra em cena em vivoStart, leva o tiro em hitAt, some em vivoEnd
+// zumbi N: entra em cena em vivoStart, leva o tiro em hitAt, some em vivoEnd.
+// Um de cada vez, com folga entre um sumir e o proximo aparecer, pra dar
+// tempo de ver a animacao de cada um (entrada, acerto, sangramento, morte).
 const ZOMBIES = [
-  { x: 580, vivoStart: 0, hitAt: 24, vivoEnd: 40, lento: true },
-  { x: 540, vivoStart: 30, hitAt: 54, vivoEnd: 70, lento: true },
-  { x: 500, vivoStart: 62, hitAt: 76, vivoEnd: 87, lento: true },
-  { x: 460, vivoStart: 76, hitAt: 90, vivoEnd: 100, lento: false },
+  { x: 580, vivoStart: 0, hitAt: 8, vivoEnd: 24, lento: true },
+  { x: 540, vivoStart: 26, hitAt: 34, vivoEnd: 50, lento: true },
+  { x: 500, vivoStart: 52, hitAt: 60, vivoEnd: 76, lento: true },
+  { x: 460, vivoStart: 78, hitAt: 86, vivoEnd: 98, lento: false },
 ];
-const FURIA_EM = 56; // % em que a barra de furia enche e a Agatha entra em modo furioso
+const FURIA_EM = 38; // % em que a barra de furia enche e a Agatha entra em modo furioso
 
-// caminho de voo da Tina: [%, x em px]. Ela entra, sobrevoa os zumbis
-// (patrulha lenta) e so depois que solta o 3o token (barra cheia, 74%) sai
-// de cena — devagar, sem pressa, deslizando pro lado em vez de disparar.
+// caminho de voo da Tina: [%, x em px]. Ela entra, sobrevoa cada zumbi bem
+// na hora do respectivo acerto (solta o token ali) e so depois do 3o token
+// (barra cheia) sai de cena — devagar, sem pressa, deslizando pro lado em
+// vez de disparar.
+const OLHO_FLASH_AT = 63; // mesmo instante do 3o token — barra dela completa
 const TINA_PATH = [
-  [0, -140], [26, 600], [40, 645], [58, 660], [72, 600],
-  [74, 625], // barra cheia aqui — olho muda de cor
-  [84, 665], [94, 715], [100, 750],
+  [0, -140], [11, 628], [24, 660], [37, 588], [50, 610],
+  [OLHO_FLASH_AT, 548], // barra cheia aqui — olho muda de cor
+  [75, 590], [88, 640], [100, 700],
 ];
 function tinaX(t) {
   for (let i = 0; i < TINA_PATH.length - 1; i++) {
@@ -209,12 +213,17 @@ function buildSvg(theme) {
     @keyframes eyeFury{ 0%,${FURIA_EM - 0.1}%{opacity:0} ${FURIA_EM}%,100%{opacity:1} }
     #agatha{ animation: recuo 11s linear infinite; }
     @keyframes recuo{
-      0%,21%{transform:translateX(0)} 23%{transform:translateX(-8px)} 27%,51%{transform:translateX(0)}
-      53%{transform:translateX(-8px)} 57%,73%{transform:translateX(0)} 75%{transform:translateX(-8px)}
-      78%,87%{transform:translateX(0)} 89%{transform:translateX(-8px)} 92%,100%{transform:translateX(0)}
+      0%{transform:translateX(0)}
+      ${ZOMBIES.map((z) => `${z.hitAt - 1}%{transform:translateX(0)} ${z.hitAt}%{transform:translateX(-8px)} ${z.hitAt + 3}%{transform:translateX(0)}`).join(' ')}
+      100%{transform:translateX(0)}
     }
     .furia-barra{ animation: cargaBarra 11s linear infinite; }
-    @keyframes cargaBarra{ 0%,23.9%{width:0px} 24%,53.9%{width:${BAR_W * 0.34}px} 54%,${FURIA_EM - 0.1}%{width:${BAR_W * 0.68}px} ${FURIA_EM}%,100%{width:${BAR_W}px} }
+    @keyframes cargaBarra{
+      0%,${ZOMBIES[0].hitAt - 0.1}%{width:0px}
+      ${ZOMBIES[0].hitAt}%,${ZOMBIES[1].hitAt - 0.1}%{width:${BAR_W * 0.34}px}
+      ${ZOMBIES[1].hitAt}%,${FURIA_EM - 0.1}%{width:${BAR_W * 0.68}px}
+      ${FURIA_EM}%,100%{width:${BAR_W}px}
+    }
     .furia-label{ animation: furiaLabel 11s linear infinite; }
     @keyframes furiaLabel{ 0%,${FURIA_EM - 0.1}%{opacity:0} ${FURIA_EM}%{opacity:1} ${FURIA_EM + 4}%{opacity:.35} ${FURIA_EM + 8}%{opacity:1} 100%{opacity:1} }
   `);
@@ -240,7 +249,7 @@ function buildSvg(theme) {
     const targetCx = z.x + zW / 2;
     const zombieY = groundY - zH;
     style.push(`
-      @keyframes zEntra${idx}{ 0%{transform:translateX(${W - z.x + 40}px)} ${z.hitAt - 4}%{transform:translateX(6px)} ${z.hitAt}%,100%{transform:translateX(0)} }
+      @keyframes zEntra${idx}{ 0%,${z.vivoStart}%{transform:translateX(${W - z.x + 40}px)} ${z.hitAt - 2}%{transform:translateX(6px)} ${z.hitAt}%,100%{transform:translateX(0)} }
       @keyframes zVivo${idx}{ 0%,${z.vivoStart - 0.1}%{opacity:${i === 0 ? 1 : 0}} ${z.vivoStart}%,${z.vivoEnd - 4}%{opacity:1} ${z.vivoEnd}%,100%{opacity:0} }
       @keyframes zGray${idx}{ 0%,${z.hitAt - 0.1}%{filter:none} ${z.hitAt}%,100%{filter:grayscale(.7) brightness(.8)} }
       #z${idx}{ animation: zEntra${idx} 11s linear infinite, zVivo${idx} 11s linear infinite; }
@@ -302,7 +311,7 @@ function buildSvg(theme) {
     #tina{ animation: tinaVoa 11s linear infinite; }
     @keyframes tflutua{ 0%,49.9%{transform:translateY(0)} 50%,100%{transform:translateY(-4px)} }
     #tinaBody{ animation: tflutua .34s steps(1) infinite; }
-    @keyframes olhoTina{ 0%,${73.9}%{fill:#ff3b21} 74%{fill:${TOKEN_PINK}} 76%{fill:#f4f1e8} 78%,100%{fill:${TOKEN_PINK}} }
+    @keyframes olhoTina{ 0%,${OLHO_FLASH_AT - 0.1}%{fill:#ff3b21} ${OLHO_FLASH_AT}%{fill:${TOKEN_PINK}} ${OLHO_FLASH_AT + 2}%{fill:#f4f1e8} ${OLHO_FLASH_AT + 4}%,100%{fill:${TOKEN_PINK}} }
     .tina-pupil{ animation: olhoTina 11s linear infinite; }
   `);
   const batBody = batGroup(bPx, BAT_COLORS);
@@ -311,7 +320,7 @@ function buildSvg(theme) {
   // 3 tokens cuspidos pela Tina sobre os 3 primeiros zumbis: nascem exatamente
   // na posicao dela no instante do lancamento (mesma curva tinaX) e caem em
   // diagonal ate o zumbi-alvo, em vez de so aparecerem já em cima dele.
-  const dropTimes = [26, 42, 74];
+  const dropTimes = [11, 37, OLHO_FLASH_AT];
   ZOMBIES.slice(0, 3).forEach((z, i) => {
     const t = dropTimes[i];
     const cx = z.x + zW / 2;
