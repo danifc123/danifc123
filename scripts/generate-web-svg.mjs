@@ -92,7 +92,7 @@ export function buildSvg(weeks, targets, theme) {
   const rows = 7;
   const gridW = cols * PITCH - GAP;
   const gridH = rows * PITCH - GAP;
-  const marginLeft = 130, marginTop = 16, marginRight = 16, marginBottom = 16;
+  const marginLeft = 150, marginTop = 30, marginRight = 16, marginBottom = 34;
   const width = marginLeft + gridW + marginRight;
   const height = marginTop + gridH + marginBottom;
 
@@ -105,6 +105,8 @@ export function buildSvg(weeks, targets, theme) {
     : { body: '#0c0c0f', hi: '#26262e', eye: '#f4f1e8', pupil: '#ff3b21' };
   const threadColor = theme === 'dark' ? '#4d5561' : '#b9c1c9';
   const webColor = bg;
+  const labelColor = theme === 'dark' ? '#7d8590' : '#57606a';
+  const fontFamily = '-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif';
 
   const cells = [];
   weeks.forEach((w, wi) => {
@@ -114,6 +116,33 @@ export function buildSvg(weeks, targets, theme) {
       cells.push(`<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" rx="2" fill="${palette[d.level]}"/>`);
     });
   });
+
+  const MESES = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+  const monthLabels = [];
+  let lastMonth = -1;
+  weeks.forEach((w, wi) => {
+    const first = w.contributionDays[0];
+    if (!first) return;
+    const m = new Date(`${first.date}T00:00:00Z`).getUTCMonth();
+    if (m !== lastMonth && wi > 0) {
+      monthLabels.push(`<text x="${marginLeft + wi * PITCH}" y="${marginTop - 10}" font-family="${fontFamily}" font-size="10" fill="${labelColor}">${MESES[m]}</text>`);
+    }
+    lastMonth = m;
+  });
+
+  const weekdayLabels = [1, 3, 5].map((wd) => {
+    const label = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sab'][wd];
+    const y = marginTop + wd * PITCH + CELL - 1;
+    return `<text x="${marginLeft - 8}" y="${y}" text-anchor="end" font-family="${fontFamily}" font-size="9" fill="${labelColor}">${label}</text>`;
+  });
+
+  const legendY = marginTop + gridH + 20;
+  const legendSwatches = palette.map((c, i) => `<rect x="${width - marginRight - (5 - i) * (CELL - 1)}" y="${legendY - CELL + 1}" width="${CELL - 3}" height="${CELL - 3}" rx="2" fill="${c}"/>`).join('');
+  const legend = `
+    <text x="${width - marginRight - 5 * (CELL - 1) - 30}" y="${legendY}" text-anchor="end" font-family="${fontFamily}" font-size="9" fill="${labelColor}">menos</text>
+    ${legendSwatches}
+    <text x="${width - marginRight + 2}" y="${legendY}" font-family="${fontFamily}" font-size="9" fill="${labelColor}">mais</text>
+  `;
 
   const toXY = (t) => ({
     x: marginLeft + t.weekIndex * PITCH + CELL / 2,
@@ -187,7 +216,10 @@ export function buildSvg(weeks, targets, theme) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" width="${width}" height="${height}" shape-rendering="crispEdges" role="img" aria-label="Agatha atirando teia sobre os commits reais de danifc123">
 <rect x="0" y="0" width="${width}" height="${height}" fill="${bg}"/>
 <style>${style}</style>
+${monthLabels.join('')}
+${weekdayLabels.join('')}
 ${cells.join('')}
+${legend}
 <g class="lanca" transform="translate(${spiderX},${spiderY})">${spider}</g>
 <rect class="tiro tiroA" x="0" y="0" width="5" height="5" rx="1" fill="${threadColor}"/>
 <rect class="tiro tiroB" x="0" y="0" width="5" height="5" rx="1" fill="${threadColor}"/>

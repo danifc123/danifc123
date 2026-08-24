@@ -58,11 +58,8 @@ Full stack e AI engineer construindo servidores **MCP**, agentes autônomos e ar
 
 ### Status de desenvolvimento
 
-<!-- Instancia publica por enquanto — trocar a base URL para a instancia
-     propria no Vercel assim que o deploy estiver pronto. -->
-
-![Estatísticas do GitHub](https://github-readme-stats.vercel.app/api?username=danifc123&show_icons=true&theme=github_dark&hide_border=true&count_private=true)
-![Linguagens mais usadas](https://github-readme-stats.vercel.app/api/top-langs/?username=danifc123&layout=compact&theme=github_dark&hide_border=true)
+![Estatísticas do GitHub](https://github-readme-stats-fraky.vercel.app/api?username=danifc123&show_icons=true&theme=github_dark&hide_border=true&count_private=true)
+![Linguagens mais usadas](https://github-readme-stats-fraky.vercel.app/api/top-langs/?username=danifc123&layout=compact&theme=github_dark&hide_border=true)
 
 ---
 
@@ -77,16 +74,4 @@ A Agatha mira nos dois dias com mais commits do último ano e atira teia em cima
 
 ---
 
-### Projetos em destaque
-
-<p>
-<a href="https://github.com/danifc123/AgenteOracle"><img height="150em" src="https://github-readme-stats.vercel.app/api/pin/?username=danifc123&repo=AgenteOracle&theme=github_dark&hide_border=true"/></a>
-<a href="https://github.com/danifc123/AgenteIADBSTelecom"><img height="150em" src="https://github-readme-stats.vercel.app/api/pin/?username=danifc123&repo=AgenteIADBSTelecom&theme=github_dark&hide_border=true"/></a>
-<a href="https://github.com/danifc123/Arclight-Labs"><img height="150em" src="https://github-readme-stats.vercel.app/api/pin/?username=danifc123&repo=Arclight-Labs&theme=github_dark&hide_border=true"/></a>
-<a href="https://github.com/danifc123/GlobalRecruit"><img height="150em" src="https://github-readme-stats.vercel.app/api/pin/?username=danifc123&repo=GlobalRecruit&theme=github_dark&hide_border=true"/></a>
-<a href="https://github.com/danifc123/GerenciadorLivros"><img height="150em" src="https://github-readme-stats.vercel.app/api/pin/?username=danifc123&repo=GerenciadorLivros&theme=github_dark&hide_border=true"/></a>
-</p>
-
----
-
-<sub>Mascote Agatha 🕷️ — desenhada no Claude Design.</sub>
+<sub>Mascote Agatha 🕷️ — desenhada no Claude Design. Projetos em destaque: veja o "Pinned" logo abaixo deste README.</sub>
