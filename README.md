@@ -58,7 +58,7 @@ Full stack e AI engineer construindo servidores **MCP**, agentes autônomos e ar
 
 ### Status de desenvolvimento
 
-![Estatísticas do GitHub](https://github-readme-stats-fraky.vercel.app/api?username=danifc123&show_icons=true&theme=github_dark&hide_border=true&count_private=true)
+![Estatísticas do GitHub](https://github-readme-stats-fraky.vercel.app/api?username=danifc123&show_icons=true&theme=github_dark&hide_border=true&count_private=true&hide_rank=true)
 ![Linguagens mais usadas](https://github-readme-stats-fraky.vercel.app/api/top-langs/?username=danifc123&layout=compact&theme=github_dark&hide_border=true&hide=Rich%20Text%20Format&langs_count=8)
 
 ---
