@@ -115,14 +115,23 @@ function batGroup(px, c) {
   return `<g class="wing-rest">${wr}</g><g class="wing-up">${wu}</g><g class="wing-down">${wd}</g>${base}`;
 }
 
-// pontinhos de teia — mesmo padrao usado na versao "teia nos commits"
-function webBurst(color) {
-  return ['1/1/2/2', '1/3/2/4', '1/5/2/6', '2/2/3/5', '3/1/4/3', '3/4/4/6', '4/2/5/5', '5/1/6/2', '5/3/6/4', '5/5/6/6']
-    .map((area) => {
-      const [r1, c1, r2, c2] = area.split('/').map(Number);
-      const s = 3.4;
-      return `<rect x="${(c1 - 1) * s}" y="${(r1 - 1) * s}" width="${(c2 - c1) * s}" height="${(r2 - r1) * s}" fill="${color}"/>`;
-    }).join('');
+// rajada de teia — grade 7x7 fiel a cena "Aranha Animada - GIT.dc.html"
+// (17 celulas formando a estrela da teia, nao os 10 pontinhos pequenos da
+// versao antiga da "teia nos commits").
+const WEB_BURST_CELLS = [
+  '1/1/2/2', '1/4/2/5', '1/7/2/8',
+  '2/2/3/4', '2/5/3/7',
+  '3/1/4/3', '3/4/4/5', '3/6/4/8',
+  '4/2/5/7',
+  '5/1/6/3', '5/4/6/5', '5/6/6/8',
+  '6/2/7/4', '6/5/7/7',
+  '7/1/8/2', '7/4/8/5', '7/7/8/8',
+];
+function webBurst(color, s) {
+  return WEB_BURST_CELLS.map((area) => {
+    const [r1, c1, r2, c2] = area.split('/').map(Number);
+    return `<rect x="${(c1 - 1) * s}" y="${(r1 - 1) * s}" width="${(c2 - c1) * s}" height="${(r2 - r1) * s}" fill="${color}"/>`;
+  }).join('');
 }
 
 const ZOMBIE_PALETTES = [
@@ -280,33 +289,40 @@ function buildSvg(theme) {
         @keyframes zLento${idx}{ 0%,${z.hitAt + 3}%{opacity:0} ${z.hitAt + 4}%,${z.vivoEnd - 6}%{opacity:1} ${z.vivoEnd - 2}%,100%{opacity:0} }
         .lento${idx}{ animation: zLento${idx} 11s linear infinite; }
       `);
-      scene.push(`<g class="lento${idx}" transform="translate(${z.x + 8},${zombieY + 30})">
-        <rect x="0" y="0" width="4" height="3" fill="${TOKEN_PINK}"/>
-        <rect x="6" y="4" width="4" height="3" fill="${TOKEN_PINK}"/>
-        <rect x="2" y="9" width="4" height="3" fill="${TOKEN_PINK}"/>
-        <text x="-2" y="26" font-family="${fontFamily}" font-size="8" letter-spacing="1" fill="${TOKEN_PINK}">LENTO</text>
+      scene.push(`<g class="lento${idx}" transform="translate(${z.x + 6},${zombieY + 28})">
+        <rect x="0" y="0" width="5" height="4" fill="${TOKEN_PINK}"/>
+        <rect x="7" y="5" width="5" height="4" fill="${TOKEN_PINK}"/>
+        <rect x="2" y="11" width="5" height="4" fill="${TOKEN_PINK}"/>
+        <text x="-2" y="32" font-family="${fontFamily}" font-size="12" font-weight="700" letter-spacing="1" fill="${TOKEN_PINK}">LENTO</text>
       </g>`);
     }
 
-    // rajada de teia no zumbi
+    // rajada de teia no zumbi — maior e, em modo furia, vermelho fluorescente
     const burstColor = z.hitAt >= FURIA_EM ? NEON : (dark ? '#e8e5dd' : '#f6f8fa');
     const burstFilter = z.hitAt >= FURIA_EM ? ' filter="url(#neonGlow)"' : '';
+    const burstS = 11, burstSize = burstS * 7;
+    const burstLeft = targetCx - burstSize / 2;
+    const burstTop = zombieY - 4;
+    const burstCx = burstLeft + burstSize / 2, burstCy = burstTop + burstSize / 2;
     style.push(`
       @keyframes teia${idx}{ 0%,${z.hitAt - 0.1}%{transform:scale(.2);opacity:0} ${z.hitAt}%{transform:scale(1);opacity:1} ${z.hitAt + 8}%{transform:scale(1);opacity:1} ${z.hitAt + 12}%,100%{transform:scale(1);opacity:0} }
       .teia${idx}{ animation: teia${idx} 11s linear infinite; transform-box: fill-box; transform-origin: center; }
       @keyframes tiro${idx}{
         0%,${z.hitAt - 3}%{ transform:translate(${muzzleX}px,${muzzleY}px); opacity:0; }
         ${z.hitAt - 1.6}%{ opacity:1; }
-        ${z.hitAt}%{ transform:translate(${targetCx - 2.5}px,150px); opacity:1; }
-        ${z.hitAt + 0.5}%,100%{ transform:translate(${targetCx - 2.5}px,150px); opacity:0; }
+        ${z.hitAt}%{ transform:translate(${burstCx - 2.5}px,${burstCy - 2.5}px); opacity:1; }
+        ${z.hitAt + 0.5}%,100%{ transform:translate(${burstCx - 2.5}px,${burstCy - 2.5}px); opacity:0; }
       }
       .tiro${idx}{ animation: tiro${idx} 11s linear infinite; }
     `);
     scene.push(`<rect class="tiro${idx}" x="0" y="0" width="5" height="5" rx="1" fill="${z.hitAt >= FURIA_EM ? NEON : threadColor}"/>`);
-    scene.push(`<g transform="translate(${targetCx - 17},120)"${burstFilter}><g class="teia${idx}">${webBurst(burstColor)}</g></g>`);
+    scene.push(`<g transform="translate(${burstLeft},${burstTop})"${burstFilter}><g class="teia${idx}">${webBurst(burstColor, burstS)}</g></g>`);
   });
 
-  defs.push(`<filter id="neonGlow" x="-80%" y="-80%" width="260%" height="260%"><feDropShadow dx="0" dy="0" stdDeviation="2.2" flood-color="${NEON}"/></filter>`);
+  defs.push(`<filter id="neonGlow" x="-100%" y="-100%" width="300%" height="300%">
+    <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="${NEON}" flood-opacity="0.95"/>
+    <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="${NEON}" flood-opacity="0.6"/>
+  </filter>`);
 
   // --- Tina ---
   style.push(`
@@ -381,9 +397,9 @@ function buildSvg(theme) {
       }
       .gota${i + 1}{ animation: gota${i + 1} 11s linear infinite; }
     `);
-    scene.push(`<rect class="gota${i + 1}" x="0" y="0" width="5" height="5" rx="1" fill="${TOKEN_PINK}" filter="url(#tokenGlow)"/>`);
+    scene.push(`<rect class="gota${i + 1}" x="-4" y="-4" width="8" height="8" rx="2" fill="${TOKEN_PINK}" filter="url(#tokenGlow)"/>`);
   });
-  defs.push(`<filter id="tokenGlow" x="-80%" y="-80%" width="260%" height="260%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="${TOKEN_PINK}"/></filter>`);
+  defs.push(`<filter id="tokenGlow" x="-80%" y="-80%" width="260%" height="260%"><feDropShadow dx="0" dy="0" stdDeviation="1.8" flood-color="${TOKEN_PINK}"/></filter>`);
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" shape-rendering="crispEdges" role="img" aria-label="Agatha e Tina cacando zumbis, com barra de furia">
 <defs>${defs.join('')}</defs>
