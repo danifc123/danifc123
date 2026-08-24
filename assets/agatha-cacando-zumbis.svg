@@ -1,0 +1,230 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" width="760" height="300" shape-rendering="crispEdges" role="img" aria-label="Agatha e Tina cacando zumbis, com barra de furia">
+<defs><filter id="furyGlow" x="-60%" y="-60%" width="220%" height="220%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#5a0d03"/></filter><filter id="neonGlow" x="-80%" y="-80%" width="260%" height="260%"><feDropShadow dx="0" dy="0" stdDeviation="2.2" flood-color="#ff1e3c"/></filter><filter id="tokenGlow" x="-80%" y="-80%" width="260%" height="260%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#ff2d95"/></filter></defs>
+<style>
+    @keyframes pernas{ 0%,49.9%{ --leg-a-sp:#0c0c0f; --leg-b-sp:transparent; } 50%,100%{ --leg-a-sp:transparent; --leg-b-sp:#0c0c0f; } }
+    #sp{ animation: pernas .5s steps(1) infinite; }
+    .eye-normal{ animation: eyeNormal 11s linear infinite; }
+    .eye-fury{ animation: eyeFury 11s linear infinite; }
+    @keyframes eyeNormal{ 0%,55.9%{opacity:1} 56%,100%{opacity:0} }
+    @keyframes eyeFury{ 0%,55.9%{opacity:0} 56%,100%{opacity:1} }
+    #agatha{ animation: recuo 11s linear infinite; }
+    @keyframes recuo{
+      0%,21%{transform:translateX(0)} 23%{transform:translateX(-8px)} 27%,51%{transform:translateX(0)}
+      53%{transform:translateX(-8px)} 57%,73%{transform:translateX(0)} 75%{transform:translateX(-8px)}
+      78%,87%{transform:translateX(0)} 89%{transform:translateX(-8px)} 92%,100%{transform:translateX(0)}
+    }
+    .furia-barra{ animation: cargaBarra 11s linear infinite; }
+    @keyframes cargaBarra{ 0%,23.9%{width:0px} 24%,53.9%{width:30.6px} 54%,55.9%{width:61.2px} 56%,100%{width:90px} }
+    .furia-label{ animation: furiaLabel 11s linear infinite; }
+    @keyframes furiaLabel{ 0%,55.9%{opacity:0} 56%{opacity:1} 60%{opacity:.35} 64%{opacity:1} 100%{opacity:1} }
+  
+
+    @keyframes zpose{ 0%,49.9%{--pa:1;--pb:0} 50%,100%{--pa:0;--pb:1} }
+    @keyframes zbob{ 0%,49.9%{transform:translateY(0)} 50%,100%{transform:translateY(-3px)} }
+    .zpose-a{ opacity: var(--pa, 1); }
+    .zpose-b{ opacity: var(--pb, 0); }
+  
+
+      @keyframes zEntra1{ 0%{transform:translateX(220px)} 20%{transform:translateX(6px)} 24%,100%{transform:translateX(0)} }
+      @keyframes zVivo1{ 0%,-0.1%{opacity:1} 0%,36%{opacity:1} 40%,100%{opacity:0} }
+      @keyframes zGray1{ 0%,23.9%{filter:none} 24%,100%{filter:grayscale(.7) brightness(.8)} }
+      #z1{ animation: zEntra1 11s linear infinite, zVivo1 11s linear infinite; }
+      #z1 .zbody{ animation: zbob 0.4s steps(1) infinite, zGray1 11s linear infinite; }
+      #z1 .zpx{ animation: zpose .46s steps(1) infinite; }
+      @keyframes zBar1{ 0%,23.9%{width:0px} 24%,34%{width:68px} 40%,100%{width:68px} }
+      .zbar1{ animation: zBar1 11s linear infinite; }
+    
+
+        @keyframes zLento1{ 0%,27%{opacity:0} 28%,34%{opacity:1} 38%,100%{opacity:0} }
+        .lento1{ animation: zLento1 11s linear infinite; }
+      
+
+      @keyframes teia1{ 0%,23.9%{transform:scale(.2);opacity:0} 24%{transform:scale(1);opacity:1} 32%{transform:scale(1);opacity:1} 36%,100%{transform:scale(1);opacity:0} }
+      .teia1{ animation: teia1 11s linear infinite; transform-box: fill-box; transform-origin: center; }
+      @keyframes tiro1{
+        0%,21%{ transform:translate(146px,154px); opacity:0; }
+        22.4%{ opacity:1; }
+        24%{ transform:translate(625.5px,150px); opacity:1; }
+        24.5%,100%{ transform:translate(625.5px,150px); opacity:0; }
+      }
+      .tiro1{ animation: tiro1 11s linear infinite; }
+    
+
+      @keyframes zEntra2{ 0%{transform:translateX(260px)} 50%{transform:translateX(6px)} 54%,100%{transform:translateX(0)} }
+      @keyframes zVivo2{ 0%,29.9%{opacity:0} 30%,66%{opacity:1} 70%,100%{opacity:0} }
+      @keyframes zGray2{ 0%,53.9%{filter:none} 54%,100%{filter:grayscale(.7) brightness(.8)} }
+      #z2{ animation: zEntra2 11s linear infinite, zVivo2 11s linear infinite; }
+      #z2 .zbody{ animation: zbob 0.46s steps(1) infinite, zGray2 11s linear infinite; }
+      #z2 .zpx{ animation: zpose .46s steps(1) infinite; }
+      @keyframes zBar2{ 0%,53.9%{width:0px} 54%,64%{width:68px} 70%,100%{width:68px} }
+      .zbar2{ animation: zBar2 11s linear infinite; }
+    
+
+        @keyframes zLento2{ 0%,57%{opacity:0} 58%,64%{opacity:1} 68%,100%{opacity:0} }
+        .lento2{ animation: zLento2 11s linear infinite; }
+      
+
+      @keyframes teia2{ 0%,53.9%{transform:scale(.2);opacity:0} 54%{transform:scale(1);opacity:1} 62%{transform:scale(1);opacity:1} 66%,100%{transform:scale(1);opacity:0} }
+      .teia2{ animation: teia2 11s linear infinite; transform-box: fill-box; transform-origin: center; }
+      @keyframes tiro2{
+        0%,51%{ transform:translate(146px,154px); opacity:0; }
+        52.4%{ opacity:1; }
+        54%{ transform:translate(585.5px,150px); opacity:1; }
+        54.5%,100%{ transform:translate(585.5px,150px); opacity:0; }
+      }
+      .tiro2{ animation: tiro2 11s linear infinite; }
+    
+
+      @keyframes zEntra3{ 0%{transform:translateX(300px)} 72%{transform:translateX(6px)} 76%,100%{transform:translateX(0)} }
+      @keyframes zVivo3{ 0%,61.9%{opacity:0} 62%,83%{opacity:1} 87%,100%{opacity:0} }
+      @keyframes zGray3{ 0%,75.9%{filter:none} 76%,100%{filter:grayscale(.7) brightness(.8)} }
+      #z3{ animation: zEntra3 11s linear infinite, zVivo3 11s linear infinite; }
+      #z3 .zbody{ animation: zbob 0.52s steps(1) infinite, zGray3 11s linear infinite; }
+      #z3 .zpx{ animation: zpose .46s steps(1) infinite; }
+      @keyframes zBar3{ 0%,75.9%{width:0px} 76%,86%{width:68px} 87%,100%{width:68px} }
+      .zbar3{ animation: zBar3 11s linear infinite; }
+    
+
+        @keyframes zLento3{ 0%,79%{opacity:0} 80%,81%{opacity:1} 85%,100%{opacity:0} }
+        .lento3{ animation: zLento3 11s linear infinite; }
+      
+
+      @keyframes teia3{ 0%,75.9%{transform:scale(.2);opacity:0} 76%{transform:scale(1);opacity:1} 84%{transform:scale(1);opacity:1} 88%,100%{transform:scale(1);opacity:0} }
+      .teia3{ animation: teia3 11s linear infinite; transform-box: fill-box; transform-origin: center; }
+      @keyframes tiro3{
+        0%,73%{ transform:translate(146px,154px); opacity:0; }
+        74.4%{ opacity:1; }
+        76%{ transform:translate(545.5px,150px); opacity:1; }
+        76.5%,100%{ transform:translate(545.5px,150px); opacity:0; }
+      }
+      .tiro3{ animation: tiro3 11s linear infinite; }
+    
+
+      @keyframes zEntra4{ 0%{transform:translateX(340px)} 86%{transform:translateX(6px)} 90%,100%{transform:translateX(0)} }
+      @keyframes zVivo4{ 0%,75.9%{opacity:0} 76%,96%{opacity:1} 100%,100%{opacity:0} }
+      @keyframes zGray4{ 0%,89.9%{filter:none} 90%,100%{filter:grayscale(.7) brightness(.8)} }
+      #z4{ animation: zEntra4 11s linear infinite, zVivo4 11s linear infinite; }
+      #z4 .zbody{ animation: zbob 0.5800000000000001s steps(1) infinite, zGray4 11s linear infinite; }
+      #z4 .zpx{ animation: zpose .46s steps(1) infinite; }
+      @keyframes zBar4{ 0%,89.9%{width:0px} 90%,100%{width:68px} 100%,100%{width:68px} }
+      .zbar4{ animation: zBar4 11s linear infinite; }
+    
+
+      @keyframes teia4{ 0%,89.9%{transform:scale(.2);opacity:0} 90%{transform:scale(1);opacity:1} 98%{transform:scale(1);opacity:1} 102%,100%{transform:scale(1);opacity:0} }
+      .teia4{ animation: teia4 11s linear infinite; transform-box: fill-box; transform-origin: center; }
+      @keyframes tiro4{
+        0%,87%{ transform:translate(146px,154px); opacity:0; }
+        88.4%{ opacity:1; }
+        90%{ transform:translate(505.5px,150px); opacity:1; }
+        90.5%,100%{ transform:translate(505.5px,150px); opacity:0; }
+      }
+      .tiro4{ animation: tiro4 11s linear infinite; }
+    
+
+    @keyframes asas{ 0%,49.9%{--wu:1;--wd:0} 50%,100%{--wu:0;--wd:1} }
+    .wing-rest{ opacity: 0; }
+    .wing-up{ opacity: var(--wu, 0); animation: asas .34s steps(1) infinite; }
+    .wing-down{ opacity: var(--wd, 1); animation: asas .34s steps(1) infinite; }
+    @keyframes tinaVoa{
+      0%{transform:translate(-140px,26px)} 26%{transform:translate(600px,26px)} 40%{transform:translate(660px,26px)}
+      58%{transform:translate(680px,26px)} 72%{transform:translate(600px,26px)} 80%{transform:translate(700px,26px)}
+      87%{transform:translate(820px,26px)} 94%{transform:translate(1050px,26px)} 100%{transform:translate(1300px,26px)}
+    }
+    #tina{ animation: tinaVoa 11s linear infinite; }
+    @keyframes tflutua{ 0%,49.9%{transform:translateY(0)} 50%,100%{transform:translateY(-4px)} }
+    #tinaBody{ animation: tflutua .34s steps(1) infinite; }
+    @keyframes olhoTina{ 0%,73.9%{fill:#ff3b21} 74%{fill:#ff2d95} 76%{fill:#f4f1e8} 78%,100%{fill:#ff2d95} }
+    .tina-pupil{ animation: olhoTina 11s linear infinite; }
+  
+
+      @keyframes gota1{
+        0%,25.9%{ transform:translate(628px,40px); opacity:0; }
+        26%{ transform:translate(628px,40px); opacity:1; }
+        28%{ transform:translate(628px,150px); opacity:1; }
+        28.1%,100%{ transform:translate(628px,150px); opacity:0; }
+      }
+      .gota1{ animation: gota1 11s linear infinite; }
+    
+
+      @keyframes gota2{
+        0%,41.9%{ transform:translate(588px,40px); opacity:0; }
+        42%{ transform:translate(588px,40px); opacity:1; }
+        44%{ transform:translate(588px,150px); opacity:1; }
+        44.1%,100%{ transform:translate(588px,150px); opacity:0; }
+      }
+      .gota2{ animation: gota2 11s linear infinite; }
+    
+
+      @keyframes gota3{
+        0%,73.9%{ transform:translate(548px,40px); opacity:0; }
+        74%{ transform:translate(548px,40px); opacity:1; }
+        76%{ transform:translate(548px,150px); opacity:1; }
+        76.1%,100%{ transform:translate(548px,150px); opacity:0; }
+      }
+      .gota3{ animation: gota3 11s linear infinite; }
+    </style>
+<rect x="0" y="0" width="760" height="300" fill="#ffffff"/>
+<rect x="0" y="230" width="760" height="2" fill="#d3d9df"/>
+<g transform="translate(18,110)"><g id="agatha"><g id="sp"><rect x="54" y="36" width="36" height="6"  fill="#0c0c0f"/><rect x="48" y="42" width="48" height="6"  fill="#0c0c0f"/><rect x="54" y="42" width="12" height="6"  fill="#26262e"/><rect x="42" y="48" width="60" height="6"  fill="#0c0c0f"/><rect x="42" y="54" width="60" height="6"  fill="#0c0c0f"/><rect x="42" y="60" width="6" height="6"  fill="#0c0c0f"/><rect x="60" y="60" width="24" height="6"  fill="#0c0c0f"/><rect x="96" y="60" width="6" height="6"  fill="#0c0c0f"/><rect x="42" y="66" width="6" height="6"  fill="#0c0c0f"/><rect x="66" y="66" width="12" height="6"  fill="#0c0c0f"/><rect x="96" y="66" width="6" height="6"  fill="#0c0c0f"/><rect x="42" y="72" width="60" height="6"  fill="#0c0c0f"/><rect x="48" y="78" width="48" height="6"  fill="#0c0c0f"/><rect x="54" y="84" width="36" height="6"  fill="#0c0c0f"/><rect x="60" y="90" width="24" height="6"  fill="#0c0c0f"/><rect x="36" y="48" width="6" height="6"  fill="var(--leg-a-sp, #0c0c0f)"/><rect x="30" y="42" width="6" height="6"  fill="var(--leg-a-sp, #0c0c0f)"/><rect x="18" y="36" width="12" height="6"  fill="var(--leg-a-sp, #0c0c0f)"/><rect x="12" y="30" width="6" height="6"  fill="var(--leg-a-sp, #0c0c0f)"/><rect x="36" y="60" width="6" height="6"  fill="var(--leg-a-sp, #0c0c0f)"/><rect x="24" y="54" width="12" height="6"  fill="var(--leg-a-sp, #0c0c0f)"/><rect x="12" y="48" width="12" height="6"  fill="var(--leg-a-sp, #0c0c0f)"/><rect x="36" y="66" width="6" height="6"  fill="var(--leg-a-sp, #0c0c0f)"/><rect x="24" y="72" width="12" height="6"  fill="var(--leg-a-sp, #0c0c0f)"/><rect x="12" y="78" width="12" height="6"  fill="var(--leg-a-sp, #0c0c0f)"/><rect x="42" y="78" width="6" height="6"  fill="var(--leg-a-sp, #0c0c0f)"/><rect x="36" y="84" width="6" height="6"  fill="var(--leg-a-sp, #0c0c0f)"/><rect x="24" y="90" width="12" height="6"  fill="var(--leg-a-sp, #0c0c0f)"/><rect x="18" y="96" width="6" height="6"  fill="var(--leg-a-sp, #0c0c0f)"/><rect x="102" y="48" width="6" height="6"  fill="var(--leg-a-sp, #0c0c0f)"/><rect x="108" y="42" width="6" height="6"  fill="var(--leg-a-sp, #0c0c0f)"/><rect x="114" y="36" width="12" height="6"  fill="var(--leg-a-sp, #0c0c0f)"/><rect x="126" y="30" width="6" height="6"  fill="var(--leg-a-sp, #0c0c0f)"/><rect x="102" y="60" width="6" height="6"  fill="var(--leg-a-sp, #0c0c0f)"/><rect x="108" y="54" width="12" height="6"  fill="var(--leg-a-sp, #0c0c0f)"/><rect x="120" y="48" width="12" height="6"  fill="var(--leg-a-sp, #0c0c0f)"/><rect x="102" y="66" width="6" height="6"  fill="var(--leg-a-sp, #0c0c0f)"/><rect x="108" y="72" width="12" height="6"  fill="var(--leg-a-sp, #0c0c0f)"/><rect x="120" y="78" width="12" height="6"  fill="var(--leg-a-sp, #0c0c0f)"/><rect x="96" y="78" width="6" height="6"  fill="var(--leg-a-sp, #0c0c0f)"/><rect x="102" y="84" width="6" height="6"  fill="var(--leg-a-sp, #0c0c0f)"/><rect x="108" y="90" width="12" height="6"  fill="var(--leg-a-sp, #0c0c0f)"/><rect x="120" y="96" width="6" height="6"  fill="var(--leg-a-sp, #0c0c0f)"/><rect x="36" y="48" width="6" height="6"  fill="var(--leg-b-sp, transparent)"/><rect x="30" y="42" width="6" height="6"  fill="var(--leg-b-sp, transparent)"/><rect x="24" y="36" width="6" height="6"  fill="var(--leg-b-sp, transparent)"/><rect x="12" y="30" width="12" height="6"  fill="var(--leg-b-sp, transparent)"/><rect x="6" y="36" width="6" height="18"  fill="var(--leg-b-sp, transparent)"/><rect x="36" y="60" width="6" height="6"  fill="var(--leg-b-sp, transparent)"/><rect x="30" y="54" width="6" height="6"  fill="var(--leg-b-sp, transparent)"/><rect x="24" y="48" width="6" height="6"  fill="var(--leg-b-sp, transparent)"/><rect x="18" y="48" width="6" height="18"  fill="var(--leg-b-sp, transparent)"/><rect x="36" y="72" width="6" height="6"  fill="var(--leg-b-sp, transparent)"/><rect x="30" y="78" width="6" height="6"  fill="var(--leg-b-sp, transparent)"/><rect x="24" y="84" width="6" height="6"  fill="var(--leg-b-sp, transparent)"/><rect x="18" y="90" width="6" height="18"  fill="var(--leg-b-sp, transparent)"/><rect x="42" y="78" width="6" height="6"  fill="var(--leg-b-sp, transparent)"/><rect x="36" y="84" width="6" height="18"  fill="var(--leg-b-sp, transparent)"/><rect x="102" y="48" width="6" height="6"  fill="var(--leg-b-sp, transparent)"/><rect x="108" y="42" width="6" height="6"  fill="var(--leg-b-sp, transparent)"/><rect x="114" y="36" width="6" height="6"  fill="var(--leg-b-sp, transparent)"/><rect x="120" y="30" width="12" height="6"  fill="var(--leg-b-sp, transparent)"/><rect x="132" y="36" width="6" height="18"  fill="var(--leg-b-sp, transparent)"/><rect x="102" y="60" width="6" height="6"  fill="var(--leg-b-sp, transparent)"/><rect x="108" y="54" width="6" height="6"  fill="var(--leg-b-sp, transparent)"/><rect x="114" y="48" width="6" height="6"  fill="var(--leg-b-sp, transparent)"/><rect x="120" y="48" width="6" height="18"  fill="var(--leg-b-sp, transparent)"/><rect x="102" y="72" width="6" height="6"  fill="var(--leg-b-sp, transparent)"/><rect x="108" y="78" width="6" height="6"  fill="var(--leg-b-sp, transparent)"/><rect x="114" y="84" width="6" height="6"  fill="var(--leg-b-sp, transparent)"/><rect x="120" y="90" width="6" height="18"  fill="var(--leg-b-sp, transparent)"/><rect x="96" y="78" width="6" height="6"  fill="var(--leg-b-sp, transparent)"/><rect x="102" y="84" width="6" height="18"  fill="var(--leg-b-sp, transparent)"/><g class="eye-normal"><rect x="48" y="60" width="12" height="6"  fill="#f4f1e8"/><rect x="84" y="60" width="12" height="6"  fill="#f4f1e8"/><rect x="48" y="66" width="12" height="6"  fill="#f4f1e8"/><rect x="60" y="66" width="6" height="6"  fill="#ff3b21"/><rect x="78" y="66" width="6" height="6"  fill="#ff3b21"/><rect x="84" y="66" width="12" height="6"  fill="#f4f1e8"/></g><g class="eye-fury" filter="url(#furyGlow)"><rect x="48" y="60" width="12" height="6"  fill="#ff3b21"/><rect x="84" y="60" width="12" height="6"  fill="#ff3b21"/><rect x="48" y="66" width="12" height="6"  fill="#ff3b21"/><rect x="60" y="66" width="6" height="6"  fill="#5a0d03"/><rect x="78" y="66" width="6" height="6"  fill="#5a0d03"/><rect x="84" y="66" width="12" height="6"  fill="#ff3b21"/><rect x="60" y="96" width="6" height="6"  fill="#f4f1e8"/><rect x="78" y="96" width="6" height="6"  fill="#f4f1e8"/></g></g></g></g>
+<rect x="28" y="242" width="90" height="6" fill="#d3d9df"/>
+<rect class="furia-barra" x="28" y="242" width="0" height="6" fill="#ff3b21"/>
+<text class="furia-label" x="28" y="260" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="11" letter-spacing="1.5" fill="#ff3b21">FÚRIA</text>
+<g transform="translate(580,0)"><g id="z1">
+      <g transform="translate(0,110)"><g class="zbody">
+        <g class="zpx"><rect x="24" y="12" width="48" height="6"  fill="#2f3a2a"/><rect x="24" y="18" width="48" height="30"  fill="#7aa35f"/><rect x="60" y="18" width="12" height="6"  fill="#557a45"/><rect x="24" y="30" width="6" height="6"  fill="#557a45"/><rect x="30" y="18" width="12" height="6"  fill="#2f3a2a"/><rect x="54" y="18" width="12" height="6"  fill="#2f3a2a"/><rect x="30" y="24" width="12" height="6"  fill="#ff3b21"/><rect x="54" y="24" width="12" height="6"  fill="#ff3b21"/><rect x="36" y="36" width="24" height="6"  fill="#14171e"/><rect x="42" y="42" width="12" height="6"  fill="#14171e"/><rect x="42" y="36" width="6" height="6"  fill="#f4f1e8"/><rect x="54" y="36" width="6" height="6"  fill="#f4f1e8"/><rect x="42" y="48" width="18" height="6"  fill="#557a45"/><rect x="24" y="54" width="48" height="36"  fill="#46536a"/><rect x="30" y="66" width="6" height="6"  fill="#7aa35f"/><rect x="60" y="72" width="6" height="6"  fill="#557a45"/><rect x="36" y="84" width="6" height="6"  fill="#333d4f"/><rect x="48" y="60" width="6" height="6"  fill="#333d4f"/><g class="zpose-a"><rect x="6" y="54" width="18" height="12"  fill="#46536a"/><rect x="0" y="54" width="6" height="12"  fill="#7aa35f"/><rect x="12" y="66" width="12" height="12"  fill="#333d4f"/><rect x="6" y="66" width="6" height="12"  fill="#557a45"/><rect x="30" y="90" width="18" height="18"  fill="#2b3140"/><rect x="54" y="90" width="18" height="18"  fill="#2b3140"/><rect x="24" y="108" width="24" height="6"  fill="#14171e"/><rect x="54" y="108" width="24" height="6"  fill="#14171e"/></g><g class="zpose-b"><rect x="6" y="48" width="18" height="12"  fill="#46536a"/><rect x="0" y="48" width="6" height="12"  fill="#7aa35f"/><rect x="12" y="60" width="12" height="12"  fill="#333d4f"/><rect x="6" y="60" width="6" height="12"  fill="#557a45"/><rect x="36" y="90" width="18" height="12"  fill="#2b3140"/><rect x="24" y="102" width="18" height="12"  fill="#2b3140"/><rect x="18" y="108" width="24" height="6"  fill="#14171e"/><rect x="48" y="90" width="18" height="12"  fill="#2b3140"/><rect x="60" y="102" width="18" height="12"  fill="#2b3140"/><rect x="60" y="108" width="24" height="6"  fill="#14171e"/></g></g>
+      </g></g>
+      <rect x="14" y="96" width="68" height="5" fill="#d3d9df"/>
+      <rect class="zbar1" x="14" y="96" width="0" height="5" fill="#ff3b21"/>
+    </g></g>
+<g class="lento1" transform="translate(588,140)">
+        <rect x="0" y="0" width="4" height="3" fill="#ff2d95"/>
+        <rect x="6" y="4" width="4" height="3" fill="#ff2d95"/>
+        <rect x="2" y="9" width="4" height="3" fill="#ff2d95"/>
+        <text x="-2" y="26" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="8" letter-spacing="1" fill="#ff2d95">LENTO</text>
+      </g>
+<rect class="tiro1" x="0" y="0" width="5" height="5" rx="1" fill="#b9c1c9"/>
+<g transform="translate(611,120)"><g class="teia1"><rect x="0" y="0" width="3.4" height="3.4" fill="#f6f8fa"/><rect x="6.8" y="0" width="3.4" height="3.4" fill="#f6f8fa"/><rect x="13.6" y="0" width="3.4" height="3.4" fill="#f6f8fa"/><rect x="3.4" y="3.4" width="10.2" height="3.4" fill="#f6f8fa"/><rect x="0" y="6.8" width="6.8" height="3.4" fill="#f6f8fa"/><rect x="10.2" y="6.8" width="6.8" height="3.4" fill="#f6f8fa"/><rect x="3.4" y="10.2" width="10.2" height="3.4" fill="#f6f8fa"/><rect x="0" y="13.6" width="3.4" height="3.4" fill="#f6f8fa"/><rect x="6.8" y="13.6" width="3.4" height="3.4" fill="#f6f8fa"/><rect x="13.6" y="13.6" width="3.4" height="3.4" fill="#f6f8fa"/></g></g>
+<g transform="translate(540,0)"><g id="z2">
+      <g transform="translate(0,110)"><g class="zbody">
+        <g class="zpx"><rect x="24" y="12" width="48" height="6"  fill="#2f3a2a"/><rect x="24" y="18" width="48" height="30"  fill="#6d9455"/><rect x="60" y="18" width="12" height="6"  fill="#4a6b3d"/><rect x="24" y="30" width="6" height="6"  fill="#4a6b3d"/><rect x="30" y="18" width="12" height="6"  fill="#2f3a2a"/><rect x="54" y="18" width="12" height="6"  fill="#2f3a2a"/><rect x="30" y="24" width="12" height="6"  fill="#ff3b21"/><rect x="54" y="24" width="12" height="6"  fill="#ff3b21"/><rect x="36" y="36" width="24" height="6"  fill="#14171e"/><rect x="42" y="42" width="12" height="6"  fill="#14171e"/><rect x="42" y="36" width="6" height="6"  fill="#f4f1e8"/><rect x="54" y="36" width="6" height="6"  fill="#f4f1e8"/><rect x="42" y="48" width="18" height="6"  fill="#4a6b3d"/><rect x="24" y="54" width="48" height="36"  fill="#5a4a4a"/><rect x="30" y="66" width="6" height="6"  fill="#6d9455"/><rect x="60" y="72" width="6" height="6"  fill="#4a6b3d"/><rect x="36" y="84" width="6" height="6"  fill="#3f3434"/><rect x="48" y="60" width="6" height="6"  fill="#3f3434"/><g class="zpose-a"><rect x="6" y="54" width="18" height="12"  fill="#5a4a4a"/><rect x="0" y="54" width="6" height="12"  fill="#6d9455"/><rect x="12" y="66" width="12" height="12"  fill="#3f3434"/><rect x="6" y="66" width="6" height="12"  fill="#4a6b3d"/><rect x="30" y="90" width="18" height="18"  fill="#2b3140"/><rect x="54" y="90" width="18" height="18"  fill="#2b3140"/><rect x="24" y="108" width="24" height="6"  fill="#14171e"/><rect x="54" y="108" width="24" height="6"  fill="#14171e"/></g><g class="zpose-b"><rect x="6" y="48" width="18" height="12"  fill="#5a4a4a"/><rect x="0" y="48" width="6" height="12"  fill="#6d9455"/><rect x="12" y="60" width="12" height="12"  fill="#3f3434"/><rect x="6" y="60" width="6" height="12"  fill="#4a6b3d"/><rect x="36" y="90" width="18" height="12"  fill="#2b3140"/><rect x="24" y="102" width="18" height="12"  fill="#2b3140"/><rect x="18" y="108" width="24" height="6"  fill="#14171e"/><rect x="48" y="90" width="18" height="12"  fill="#2b3140"/><rect x="60" y="102" width="18" height="12"  fill="#2b3140"/><rect x="60" y="108" width="24" height="6"  fill="#14171e"/></g></g>
+      </g></g>
+      <rect x="14" y="96" width="68" height="5" fill="#d3d9df"/>
+      <rect class="zbar2" x="14" y="96" width="0" height="5" fill="#ff3b21"/>
+    </g></g>
+<g class="lento2" transform="translate(548,140)">
+        <rect x="0" y="0" width="4" height="3" fill="#ff2d95"/>
+        <rect x="6" y="4" width="4" height="3" fill="#ff2d95"/>
+        <rect x="2" y="9" width="4" height="3" fill="#ff2d95"/>
+        <text x="-2" y="26" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="8" letter-spacing="1" fill="#ff2d95">LENTO</text>
+      </g>
+<rect class="tiro2" x="0" y="0" width="5" height="5" rx="1" fill="#b9c1c9"/>
+<g transform="translate(571,120)"><g class="teia2"><rect x="0" y="0" width="3.4" height="3.4" fill="#f6f8fa"/><rect x="6.8" y="0" width="3.4" height="3.4" fill="#f6f8fa"/><rect x="13.6" y="0" width="3.4" height="3.4" fill="#f6f8fa"/><rect x="3.4" y="3.4" width="10.2" height="3.4" fill="#f6f8fa"/><rect x="0" y="6.8" width="6.8" height="3.4" fill="#f6f8fa"/><rect x="10.2" y="6.8" width="6.8" height="3.4" fill="#f6f8fa"/><rect x="3.4" y="10.2" width="10.2" height="3.4" fill="#f6f8fa"/><rect x="0" y="13.6" width="3.4" height="3.4" fill="#f6f8fa"/><rect x="6.8" y="13.6" width="3.4" height="3.4" fill="#f6f8fa"/><rect x="13.6" y="13.6" width="3.4" height="3.4" fill="#f6f8fa"/></g></g>
+<g transform="translate(500,0)"><g id="z3">
+      <g transform="translate(0,110)"><g class="zbody">
+        <g class="zpx"><rect x="24" y="12" width="48" height="6"  fill="#2f3a2a"/><rect x="24" y="18" width="48" height="30"  fill="#84a86a"/><rect x="60" y="18" width="12" height="6"  fill="#557a45"/><rect x="24" y="30" width="6" height="6"  fill="#557a45"/><rect x="30" y="18" width="12" height="6"  fill="#2f3a2a"/><rect x="54" y="18" width="12" height="6"  fill="#2f3a2a"/><rect x="30" y="24" width="12" height="6"  fill="#ff3b21"/><rect x="54" y="24" width="12" height="6"  fill="#ff3b21"/><rect x="36" y="36" width="24" height="6"  fill="#14171e"/><rect x="42" y="42" width="12" height="6"  fill="#14171e"/><rect x="42" y="36" width="6" height="6"  fill="#f4f1e8"/><rect x="54" y="36" width="6" height="6"  fill="#f4f1e8"/><rect x="42" y="48" width="18" height="6"  fill="#557a45"/><rect x="24" y="54" width="48" height="36"  fill="#3b4f5c"/><rect x="30" y="66" width="6" height="6"  fill="#84a86a"/><rect x="60" y="72" width="6" height="6"  fill="#557a45"/><rect x="36" y="84" width="6" height="6"  fill="#2b3b45"/><rect x="48" y="60" width="6" height="6"  fill="#2b3b45"/><g class="zpose-a"><rect x="6" y="54" width="18" height="12"  fill="#3b4f5c"/><rect x="0" y="54" width="6" height="12"  fill="#84a86a"/><rect x="12" y="66" width="12" height="12"  fill="#2b3b45"/><rect x="6" y="66" width="6" height="12"  fill="#557a45"/><rect x="30" y="90" width="18" height="18"  fill="#2b3140"/><rect x="54" y="90" width="18" height="18"  fill="#2b3140"/><rect x="24" y="108" width="24" height="6"  fill="#14171e"/><rect x="54" y="108" width="24" height="6"  fill="#14171e"/></g><g class="zpose-b"><rect x="6" y="48" width="18" height="12"  fill="#3b4f5c"/><rect x="0" y="48" width="6" height="12"  fill="#84a86a"/><rect x="12" y="60" width="12" height="12"  fill="#2b3b45"/><rect x="6" y="60" width="6" height="12"  fill="#557a45"/><rect x="36" y="90" width="18" height="12"  fill="#2b3140"/><rect x="24" y="102" width="18" height="12"  fill="#2b3140"/><rect x="18" y="108" width="24" height="6"  fill="#14171e"/><rect x="48" y="90" width="18" height="12"  fill="#2b3140"/><rect x="60" y="102" width="18" height="12"  fill="#2b3140"/><rect x="60" y="108" width="24" height="6"  fill="#14171e"/></g></g>
+      </g></g>
+      <rect x="14" y="96" width="68" height="5" fill="#d3d9df"/>
+      <rect class="zbar3" x="14" y="96" width="0" height="5" fill="#ff3b21"/>
+    </g></g>
+<g class="lento3" transform="translate(508,140)">
+        <rect x="0" y="0" width="4" height="3" fill="#ff2d95"/>
+        <rect x="6" y="4" width="4" height="3" fill="#ff2d95"/>
+        <rect x="2" y="9" width="4" height="3" fill="#ff2d95"/>
+        <text x="-2" y="26" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="8" letter-spacing="1" fill="#ff2d95">LENTO</text>
+      </g>
+<rect class="tiro3" x="0" y="0" width="5" height="5" rx="1" fill="#ff1e3c"/>
+<g transform="translate(531,120)" filter="url(#neonGlow)"><g class="teia3"><rect x="0" y="0" width="3.4" height="3.4" fill="#ff1e3c"/><rect x="6.8" y="0" width="3.4" height="3.4" fill="#ff1e3c"/><rect x="13.6" y="0" width="3.4" height="3.4" fill="#ff1e3c"/><rect x="3.4" y="3.4" width="10.2" height="3.4" fill="#ff1e3c"/><rect x="0" y="6.8" width="6.8" height="3.4" fill="#ff1e3c"/><rect x="10.2" y="6.8" width="6.8" height="3.4" fill="#ff1e3c"/><rect x="3.4" y="10.2" width="10.2" height="3.4" fill="#ff1e3c"/><rect x="0" y="13.6" width="3.4" height="3.4" fill="#ff1e3c"/><rect x="6.8" y="13.6" width="3.4" height="3.4" fill="#ff1e3c"/><rect x="13.6" y="13.6" width="3.4" height="3.4" fill="#ff1e3c"/></g></g>
+<g transform="translate(460,0)"><g id="z4">
+      <g transform="translate(0,110)"><g class="zbody">
+        <g class="zpx"><rect x="24" y="12" width="48" height="6"  fill="#2f3a2a"/><rect x="24" y="18" width="48" height="30"  fill="#5f8a4c"/><rect x="60" y="18" width="12" height="6"  fill="#557a45"/><rect x="24" y="30" width="6" height="6"  fill="#557a45"/><rect x="30" y="18" width="12" height="6"  fill="#2f3a2a"/><rect x="54" y="18" width="12" height="6"  fill="#2f3a2a"/><rect x="30" y="24" width="12" height="6"  fill="#ff3b21"/><rect x="54" y="24" width="12" height="6"  fill="#ff3b21"/><rect x="36" y="36" width="24" height="6"  fill="#14171e"/><rect x="42" y="42" width="12" height="6"  fill="#14171e"/><rect x="42" y="36" width="6" height="6"  fill="#f4f1e8"/><rect x="54" y="36" width="6" height="6"  fill="#f4f1e8"/><rect x="42" y="48" width="18" height="6"  fill="#557a45"/><rect x="24" y="54" width="48" height="36"  fill="#4a3628"/><rect x="30" y="66" width="6" height="6"  fill="#5f8a4c"/><rect x="60" y="72" width="6" height="6"  fill="#557a45"/><rect x="36" y="84" width="6" height="6"  fill="#33251b"/><rect x="48" y="60" width="6" height="6"  fill="#33251b"/><g class="zpose-a"><rect x="6" y="54" width="18" height="12"  fill="#4a3628"/><rect x="0" y="54" width="6" height="12"  fill="#5f8a4c"/><rect x="12" y="66" width="12" height="12"  fill="#33251b"/><rect x="6" y="66" width="6" height="12"  fill="#557a45"/><rect x="30" y="90" width="18" height="18"  fill="#2b3140"/><rect x="54" y="90" width="18" height="18"  fill="#2b3140"/><rect x="24" y="108" width="24" height="6"  fill="#14171e"/><rect x="54" y="108" width="24" height="6"  fill="#14171e"/></g><g class="zpose-b"><rect x="6" y="48" width="18" height="12"  fill="#4a3628"/><rect x="0" y="48" width="6" height="12"  fill="#5f8a4c"/><rect x="12" y="60" width="12" height="12"  fill="#33251b"/><rect x="6" y="60" width="6" height="12"  fill="#557a45"/><rect x="36" y="90" width="18" height="12"  fill="#2b3140"/><rect x="24" y="102" width="18" height="12"  fill="#2b3140"/><rect x="18" y="108" width="24" height="6"  fill="#14171e"/><rect x="48" y="90" width="18" height="12"  fill="#2b3140"/><rect x="60" y="102" width="18" height="12"  fill="#2b3140"/><rect x="60" y="108" width="24" height="6"  fill="#14171e"/></g></g>
+      </g></g>
+      <rect x="14" y="96" width="68" height="5" fill="#d3d9df"/>
+      <rect class="zbar4" x="14" y="96" width="0" height="5" fill="#ff3b21"/>
+    </g></g>
+<rect class="tiro4" x="0" y="0" width="5" height="5" rx="1" fill="#ff1e3c"/>
+<g transform="translate(491,120)" filter="url(#neonGlow)"><g class="teia4"><rect x="0" y="0" width="3.4" height="3.4" fill="#ff1e3c"/><rect x="6.8" y="0" width="3.4" height="3.4" fill="#ff1e3c"/><rect x="13.6" y="0" width="3.4" height="3.4" fill="#ff1e3c"/><rect x="3.4" y="3.4" width="10.2" height="3.4" fill="#ff1e3c"/><rect x="0" y="6.8" width="6.8" height="3.4" fill="#ff1e3c"/><rect x="10.2" y="6.8" width="6.8" height="3.4" fill="#ff1e3c"/><rect x="3.4" y="10.2" width="10.2" height="3.4" fill="#ff1e3c"/><rect x="0" y="13.6" width="3.4" height="3.4" fill="#ff1e3c"/><rect x="6.8" y="13.6" width="3.4" height="3.4" fill="#ff1e3c"/><rect x="13.6" y="13.6" width="3.4" height="3.4" fill="#ff1e3c"/></g></g>
+<g id="tina"><g id="tinaBody"><g class="wing-rest"><rect x="24" y="24" width="8" height="24"  fill="#1b1622"/><rect x="20" y="28" width="4" height="20"  fill="#120e18"/><rect x="48" y="24" width="8" height="24"  fill="#1b1622"/><rect x="56" y="28" width="4" height="20"  fill="#120e18"/></g><g class="wing-up"><rect x="24" y="20" width="8" height="16"  fill="#1b1622"/><rect x="16" y="12" width="8" height="24"  fill="#1b1622"/><rect x="8" y="8" width="8" height="24"  fill="#1b1622"/><rect x="4" y="8" width="4" height="16"  fill="#120e18"/><rect x="48" y="20" width="8" height="16"  fill="#1b1622"/><rect x="56" y="12" width="8" height="24"  fill="#1b1622"/><rect x="64" y="8" width="8" height="24"  fill="#1b1622"/><rect x="72" y="8" width="4" height="16"  fill="#120e18"/></g><g class="wing-down"><rect x="24" y="32" width="8" height="16"  fill="#1b1622"/><rect x="16" y="32" width="8" height="20"  fill="#1b1622"/><rect x="8" y="36" width="8" height="20"  fill="#1b1622"/><rect x="4" y="40" width="4" height="16"  fill="#120e18"/><rect x="48" y="32" width="8" height="16"  fill="#1b1622"/><rect x="56" y="32" width="8" height="20"  fill="#1b1622"/><rect x="64" y="36" width="8" height="20"  fill="#1b1622"/><rect x="72" y="40" width="4" height="16"  fill="#120e18"/></g><rect x="24" y="4" width="4" height="4"  fill="#241d2b"/><rect x="24" y="8" width="8" height="4"  fill="#241d2b"/><rect x="28" y="8" width="4" height="4"  fill="#c86b7a"/><rect x="52" y="4" width="4" height="4"  fill="#241d2b"/><rect x="48" y="8" width="8" height="4"  fill="#241d2b"/><rect x="48" y="8" width="4" height="4"  fill="#c86b7a"/><rect x="24" y="12" width="32" height="24"  fill="#241d2b"/><rect x="28" y="12" width="12" height="4"  fill="#362c40"/><rect x="28" y="20" width="8" height="8"  fill="#f4f1e8"/><rect x="44" y="20" width="8" height="8"  fill="#f4f1e8"/><rect x="32" y="24" width="4" height="4" class="tina-pupil" fill="#ff3b21"/><rect x="44" y="24" width="4" height="4" class="tina-pupil" fill="#ff3b21"/><rect x="36" y="28" width="8" height="4"  fill="#e08a96"/><rect x="32" y="36" width="16" height="16"  fill="#241d2b"/><rect x="36" y="40" width="8" height="12"  fill="#4a3a44"/><rect x="36" y="44" width="4" height="4"  fill="#c86b7a"/><rect x="32" y="32" width="16" height="4"  fill="#4d2733"/><rect x="32" y="32" width="4" height="4"  fill="#f4f1e8"/><rect x="44" y="32" width="4" height="4"  fill="#f4f1e8"/><rect x="32" y="52" width="8" height="4"  fill="#120e18"/><rect x="40" y="52" width="8" height="4"  fill="#120e18"/></g></g>
+<rect class="gota1" x="0" y="0" width="5" height="5" rx="1" fill="#ff2d95" filter="url(#tokenGlow)"/>
+<rect class="gota2" x="0" y="0" width="5" height="5" rx="1" fill="#ff2d95" filter="url(#tokenGlow)"/>
+<rect class="gota3" x="0" y="0" width="5" height="5" rx="1" fill="#ff2d95" filter="url(#tokenGlow)"/>
+</svg>
