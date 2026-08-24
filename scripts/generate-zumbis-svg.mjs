@@ -147,6 +147,22 @@ const ZOMBIES = [
 ];
 const FURIA_EM = 56; // % em que a barra de furia enche e a Agatha entra em modo furioso
 
+// caminho de voo da Tina: [%, x em px]. Ela entra, sobrevoa os zumbis
+// (patrulha lenta) e so depois que solta o 3o token (barra cheia, 74%) sai
+// de cena — devagar, sem pressa, deslizando pro lado em vez de disparar.
+const TINA_PATH = [
+  [0, -140], [26, 600], [40, 645], [58, 660], [72, 600],
+  [74, 625], // barra cheia aqui — olho muda de cor
+  [84, 665], [94, 715], [100, 750],
+];
+function tinaX(t) {
+  for (let i = 0; i < TINA_PATH.length - 1; i++) {
+    const [t0, x0] = TINA_PATH[i], [t1, x1] = TINA_PATH[i + 1];
+    if (t >= t0 && t <= t1) return x0 + (t - t0) / (t1 - t0) * (x1 - x0);
+  }
+  return TINA_PATH.at(-1)[1];
+}
+
 function buildSvg(theme) {
   const W = 760, H = 300;
   const dark = theme === 'dark';
@@ -281,9 +297,7 @@ function buildSvg(theme) {
     .wing-up{ opacity: var(--wu, 0); animation: asas .34s steps(1) infinite; }
     .wing-down{ opacity: var(--wd, 1); animation: asas .34s steps(1) infinite; }
     @keyframes tinaVoa{
-      0%{transform:translate(-140px,26px)} 26%{transform:translate(600px,26px)} 40%{transform:translate(660px,26px)}
-      58%{transform:translate(680px,26px)} 72%{transform:translate(600px,26px)} 80%{transform:translate(700px,26px)}
-      87%{transform:translate(820px,26px)} 94%{transform:translate(1050px,26px)} 100%{transform:translate(1300px,26px)}
+      ${TINA_PATH.map(([t, x]) => `${t}%{transform:translate(${x}px,26px)}`).join(' ')}
     }
     #tina{ animation: tinaVoa 11s linear infinite; }
     @keyframes tflutua{ 0%,49.9%{transform:translateY(0)} 50%,100%{transform:translateY(-4px)} }
@@ -294,17 +308,22 @@ function buildSvg(theme) {
   const batBody = batGroup(bPx, BAT_COLORS);
   scene.push(`<g id="tina"><g id="tinaBody">${batBody}</g></g>`);
 
-  // 3 tokens caindo da Tina sobre os 3 primeiros zumbis
+  // 3 tokens cuspidos pela Tina sobre os 3 primeiros zumbis: nascem exatamente
+  // na posicao dela no instante do lancamento (mesma curva tinaX) e caem em
+  // diagonal ate o zumbi-alvo, em vez de so aparecerem já em cima dele.
   const dropTimes = [26, 42, 74];
   ZOMBIES.slice(0, 3).forEach((z, i) => {
     const t = dropTimes[i];
     const cx = z.x + zW / 2;
+    const startX = tinaX(t) + 30; // boca da Tina, ~centro do corpo dela
+    const startY = 46;
+    const landY = groundY - zH + 40;
     style.push(`
       @keyframes gota${i + 1}{
-        0%,${t - 0.1}%{ transform:translate(${cx}px,40px); opacity:0; }
-        ${t}%{ transform:translate(${cx}px,40px); opacity:1; }
-        ${t + 2}%{ transform:translate(${cx}px,${groundY - zH + 40}px); opacity:1; }
-        ${t + 2.1}%,100%{ transform:translate(${cx}px,${groundY - zH + 40}px); opacity:0; }
+        0%,${t - 0.1}%{ transform:translate(${startX}px,${startY}px); opacity:0; }
+        ${t}%{ transform:translate(${startX}px,${startY}px); opacity:1; }
+        ${t + 2.4}%{ transform:translate(${cx}px,${landY}px); opacity:1; }
+        ${t + 2.5}%,100%{ transform:translate(${cx}px,${landY}px); opacity:0; }
       }
       .gota${i + 1}{ animation: gota${i + 1} 11s linear infinite; }
     `);

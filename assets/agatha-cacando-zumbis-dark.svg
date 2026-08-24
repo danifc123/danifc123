@@ -126,9 +126,7 @@
     .wing-up{ opacity: var(--wu, 0); animation: asas .34s steps(1) infinite; }
     .wing-down{ opacity: var(--wd, 1); animation: asas .34s steps(1) infinite; }
     @keyframes tinaVoa{
-      0%{transform:translate(-140px,26px)} 26%{transform:translate(600px,26px)} 40%{transform:translate(660px,26px)}
-      58%{transform:translate(680px,26px)} 72%{transform:translate(600px,26px)} 80%{transform:translate(700px,26px)}
-      87%{transform:translate(820px,26px)} 94%{transform:translate(1050px,26px)} 100%{transform:translate(1300px,26px)}
+      0%{transform:translate(-140px,26px)} 26%{transform:translate(600px,26px)} 40%{transform:translate(645px,26px)} 58%{transform:translate(660px,26px)} 72%{transform:translate(600px,26px)} 74%{transform:translate(625px,26px)} 84%{transform:translate(665px,26px)} 94%{transform:translate(715px,26px)} 100%{transform:translate(750px,26px)}
     }
     #tina{ animation: tinaVoa 11s linear infinite; }
     @keyframes tflutua{ 0%,49.9%{transform:translateY(0)} 50%,100%{transform:translateY(-4px)} }
@@ -138,28 +136,28 @@
   
 
       @keyframes gota1{
-        0%,25.9%{ transform:translate(628px,40px); opacity:0; }
-        26%{ transform:translate(628px,40px); opacity:1; }
-        28%{ transform:translate(628px,150px); opacity:1; }
-        28.1%,100%{ transform:translate(628px,150px); opacity:0; }
+        0%,25.9%{ transform:translate(630px,46px); opacity:0; }
+        26%{ transform:translate(630px,46px); opacity:1; }
+        28.4%{ transform:translate(628px,150px); opacity:1; }
+        28.5%,100%{ transform:translate(628px,150px); opacity:0; }
       }
       .gota1{ animation: gota1 11s linear infinite; }
     
 
       @keyframes gota2{
-        0%,41.9%{ transform:translate(588px,40px); opacity:0; }
-        42%{ transform:translate(588px,40px); opacity:1; }
-        44%{ transform:translate(588px,150px); opacity:1; }
-        44.1%,100%{ transform:translate(588px,150px); opacity:0; }
+        0%,41.9%{ transform:translate(676.6666666666666px,46px); opacity:0; }
+        42%{ transform:translate(676.6666666666666px,46px); opacity:1; }
+        44.4%{ transform:translate(588px,150px); opacity:1; }
+        44.5%,100%{ transform:translate(588px,150px); opacity:0; }
       }
       .gota2{ animation: gota2 11s linear infinite; }
     
 
       @keyframes gota3{
-        0%,73.9%{ transform:translate(548px,40px); opacity:0; }
-        74%{ transform:translate(548px,40px); opacity:1; }
-        76%{ transform:translate(548px,150px); opacity:1; }
-        76.1%,100%{ transform:translate(548px,150px); opacity:0; }
+        0%,73.9%{ transform:translate(655px,46px); opacity:0; }
+        74%{ transform:translate(655px,46px); opacity:1; }
+        76.4%{ transform:translate(548px,150px); opacity:1; }
+        76.5%,100%{ transform:translate(548px,150px); opacity:0; }
       }
       .gota3{ animation: gota3 11s linear infinite; }
     </style>
