@@ -9,9 +9,10 @@
   <img src="assets/tina-voando.svg" alt="Tina, morceguinha pixelada, batendo asa" width="76">
 </picture>
 
-# Daniel Faria do Carmo
-
-### Software Engineer · AI Agent Developer
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/titulo-nome-dark.svg">
+  <img src="assets/titulo-nome.svg" alt="Daniel Faria do Carmo — Software Engineer / AI Agent Developer">
+</picture>
 
 *MCP Protocol · Angular & ASP.NET Core · Python · LLM Integration · RAG*
 
@@ -28,9 +29,12 @@
 
 <br>
 
-## 🕷️ Stack
-
 <div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/titulo-stack-dark.svg">
+  <img src="assets/titulo-stack.svg" alt="Stack">
+</picture>
 
 **Linguagens**
 
@@ -78,9 +82,12 @@
 
 <br>
 
-## 📊 Status de desenvolvimento
-
 <div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/titulo-status-dark.svg">
+  <img src="assets/titulo-status.svg" alt="Status de desenvolvimento">
+</picture>
 
 <table>
 <tr>
@@ -93,9 +100,12 @@
 
 <br>
 
-## 🧟 Agatha caçando zumbis
-
 <div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/titulo-zumbis-dark.svg">
+  <img src="assets/titulo-zumbis.svg" alt="Agatha caçando zumbis">
+</picture>
 
 A Agatha atira teia nos zumbis que avançam, enche a barra de **fúria** e entra em modo furioso — e a **Tina**, morceguinha amiga dela, sobrevoa soltando tokens que sangram e atrasam a horda.
 
