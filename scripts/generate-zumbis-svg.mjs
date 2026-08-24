@@ -284,23 +284,10 @@ function buildSvg(theme) {
       <rect class="zbar${idx}" x="14" y="${zombieY - 14}" width="0" height="5" fill="#ff3b21"/>
     </g></g>`);
 
-    if (z.lento) {
-      style.push(`
-        @keyframes zLento${idx}{ 0%,${z.hitAt + 3}%{opacity:0} ${z.hitAt + 4}%,${z.vivoEnd - 6}%{opacity:1} ${z.vivoEnd - 2}%,100%{opacity:0} }
-        .lento${idx}{ animation: zLento${idx} 11s linear infinite; }
-      `);
-      scene.push(`<g class="lento${idx}" transform="translate(${z.x + 6},${zombieY + 28})">
-        <rect x="0" y="0" width="5" height="4" fill="${TOKEN_PINK}"/>
-        <rect x="7" y="5" width="5" height="4" fill="${TOKEN_PINK}"/>
-        <rect x="2" y="11" width="5" height="4" fill="${TOKEN_PINK}"/>
-        <text x="-2" y="32" font-family="${fontFamily}" font-size="12" font-weight="700" letter-spacing="1" fill="${TOKEN_PINK}">LENTO</text>
-      </g>`);
-    }
-
-    // rajada de teia no zumbi — maior e, em modo furia, vermelho fluorescente
+    // rajada de teia no zumbi — grande e, em modo furia, vermelho fluorescente
     const burstColor = z.hitAt >= FURIA_EM ? NEON : (dark ? '#e8e5dd' : '#f6f8fa');
     const burstFilter = z.hitAt >= FURIA_EM ? ' filter="url(#neonGlow)"' : '';
-    const burstS = 11, burstSize = burstS * 7;
+    const burstS = 9.5, burstSize = burstS * 7;
     const burstLeft = targetCx - burstSize / 2;
     const burstTop = zombieY - 4;
     const burstCx = burstLeft + burstSize / 2, burstCy = burstTop + burstSize / 2;
@@ -317,6 +304,20 @@ function buildSvg(theme) {
     `);
     scene.push(`<rect class="tiro${idx}" x="0" y="0" width="5" height="5" rx="1" fill="${z.hitAt >= FURIA_EM ? NEON : threadColor}"/>`);
     scene.push(`<g transform="translate(${burstLeft},${burstTop})"${burstFilter}><g class="teia${idx}">${webBurst(burstColor, burstS)}</g></g>`);
+
+    // "LENTO" da Tina pintado por cima da teia (depois dela na ordem do SVG)
+    if (z.lento) {
+      style.push(`
+        @keyframes zLento${idx}{ 0%,${z.hitAt + 3}%{opacity:0} ${z.hitAt + 4}%,${z.vivoEnd - 6}%{opacity:1} ${z.vivoEnd - 2}%,100%{opacity:0} }
+        .lento${idx}{ animation: zLento${idx} 11s linear infinite; }
+      `);
+      scene.push(`<g class="lento${idx}" transform="translate(${z.x + 6},${zombieY + 28})">
+        <rect x="0" y="0" width="5" height="4" fill="${TOKEN_PINK}"/>
+        <rect x="7" y="5" width="5" height="4" fill="${TOKEN_PINK}"/>
+        <rect x="2" y="11" width="5" height="4" fill="${TOKEN_PINK}"/>
+        <text x="-2" y="32" font-family="${fontFamily}" font-size="12" font-weight="700" letter-spacing="1" fill="${TOKEN_PINK}">LENTO</text>
+      </g>`);
+    }
   });
 
   defs.push(`<filter id="neonGlow" x="-100%" y="-100%" width="300%" height="300%">
