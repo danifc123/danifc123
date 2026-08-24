@@ -11,7 +11,7 @@
 
 Software Engineer · Innovation Developer · AI Agent Developer — MCP Protocol, Angular & ASP.NET Core, Python, LLM Integration, RAG
 
-📍 Rio Verde, GO — remoto/presencial &nbsp;·&nbsp; 🟢 aberto a oportunidades &nbsp;·&nbsp; 🧵 mascote: **Agatha**
+📍 Rio Verde, GO — remoto/presencial &nbsp;·&nbsp; 🟢 aberto a oportunidades &nbsp;·&nbsp;
 
 Full stack e AI engineer construindo servidores **MCP**, agentes autônomos e arquiteturas **RAG** integradas a ERPs corporativos. Hoje no Grupo Conceito, com LLMs locais via Ollama — sem custo de API externa.
 
@@ -66,7 +66,7 @@ Full stack e AI engineer construindo servidores **MCP**, agentes autônomos e ar
 ![Linguagens mais usadas](https://github-readme-stats-fraky.vercel.app/api/top-langs/?username=danifc123&layout=compact&theme=github_dark&hide_border=true&hide=Rich%20Text%20Format&langs_count=8)
 
 ---
-
+**Agatha e Tina**
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/agatha-cacando-zumbis-dark.svg">
   <img src="assets/agatha-cacando-zumbis.svg" alt="Agatha e Tina caçando zumbis: teia, barra de fúria e modo furioso">
