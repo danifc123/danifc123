@@ -2,6 +2,10 @@
   <source media="(prefers-color-scheme: dark)" srcset="assets/agatha-descendo-dark.svg">
   <img src="assets/agatha-descendo.svg" alt="Agatha, aranha pixelada, descendo da teia" width="96">
 </picture>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/tina-voando-dark.svg">
+  <img src="assets/tina-voando.svg" alt="Tina, morceguinha pixelada, batendo asa" width="76">
+</picture>
 
 # Daniel Faria do Carmo
 
