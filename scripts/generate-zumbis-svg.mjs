@@ -132,11 +132,18 @@ const ZOMBIE_PALETTES = [
   { hair: '#2f3a2a', skin: '#5f8a4c', 'skin-dark': '#557a45', zeye: '#ff3b21', dark: '#14171e', tooth: '#f4f1e8', shirt: '#4a3628', 'shirt-dark': '#33251b', pants: '#2b3140' },
 ];
 
-const BAT_COLORS = {
-  'fur-body': '#241d2b', 'fur-hi': '#362c40', 'ear-inner': '#c86b7a', 'bat-eye': '#f4f1e8',
-  pupil: '#ff3b21', nose: '#e08a96', belly: '#4a3a44', marca: '#c86b7a', mouth: '#4d2733',
-  tooth: '#f4f1e8', foot: '#120e18', wing: '#1b1622', 'wing-dark': '#120e18',
+const BAT_COLORS_SHARED = {
+  'fur-hi': '#362c40', 'ear-inner': '#c86b7a', 'bat-eye': '#f4f1e8',
+  pupil: '#ff3b21', nose: '#e08a96', belly: '#4a3a44', mouth: '#4d2733',
+  tooth: '#f4f1e8', foot: '#120e18',
 };
+// no tema escuro o pelo/asa da Tina clareiam (senao ela some no fundo
+// escuro) — mesma logica ja aplicada ao corpo da Agatha.
+function batColorsFor(theme) {
+  return theme === 'dark'
+    ? { ...BAT_COLORS_SHARED, 'fur-body': '#2f2637', wing: '#241d2b', 'wing-dark': '#1a1420', marca: '#ff3b21' }
+    : { ...BAT_COLORS_SHARED, 'fur-body': '#241d2b', wing: '#1b1622', 'wing-dark': '#120e18', marca: '#c86b7a' };
+}
 
 // zumbi N: entra em cena em vivoStart, leva o tiro em hitAt, some em vivoEnd.
 // Um de cada vez, com folga entre um sumir e o proximo aparecer, pra dar
@@ -154,6 +161,7 @@ const FURIA_EM = 38; // % em que a barra de furia enche e a Agatha entra em modo
 // (barra cheia) sai de cena — devagar, sem pressa, deslizando pro lado em
 // vez de disparar.
 const OLHO_FLASH_AT = 63; // mesmo instante do 3o token — barra dela completa
+const TINA_DROPS = [11, 37, OLHO_FLASH_AT]; // % em que ela solta cada um dos 3 tokens
 const TINA_PATH = [
   [0, -140], [11, 628], [24, 660], [37, 588], [50, 610],
   [OLHO_FLASH_AT, 548], // barra cheia aqui — olho muda de cor
@@ -186,6 +194,7 @@ function buildSvg(theme) {
   const spPx = 6, spW = 24 * spPx, spH = 20 * spPx;
   const zPx = 6, zW = 16 * zPx, zH = 20 * zPx;
   const bPx = 4, bW = 20 * bPx, bH = 15 * bPx;
+  const TINA_BAR_W = 40;
 
   const agathaX = 18, agathaY = groundY - spH;
   const muzzleX = agathaX + spW - 16, muzzleY = agathaY + 44;
@@ -313,16 +322,52 @@ function buildSvg(theme) {
     #tinaBody{ animation: tflutua .34s steps(1) infinite; }
     @keyframes olhoTina{ 0%,${OLHO_FLASH_AT - 0.1}%{fill:#ff3b21} ${OLHO_FLASH_AT}%{fill:${TOKEN_PINK}} ${OLHO_FLASH_AT + 2}%{fill:#f4f1e8} ${OLHO_FLASH_AT + 4}%,100%{fill:${TOKEN_PINK}} }
     .tina-pupil{ animation: olhoTina 11s linear infinite; }
+    .tina-barra{ animation: cargaTina 11s linear infinite; }
+    @keyframes cargaTina{
+      0%,${TINA_DROPS[0] - 0.1}%{width:0px}
+      ${TINA_DROPS[0]}%,${TINA_DROPS[1] - 0.1}%{width:${TINA_BAR_W * 0.34}px}
+      ${TINA_DROPS[1]}%,${TINA_DROPS[2] - 0.1}%{width:${TINA_BAR_W * 0.67}px}
+      ${TINA_DROPS[2]}%,100%{width:${TINA_BAR_W}px}
+    }
   `);
-  const batBody = batGroup(bPx, BAT_COLORS);
-  scene.push(`<g id="tina"><g id="tinaBody">${batBody}</g></g>`);
+  const batBody = batGroup(bPx, batColorsFor(theme));
+
+  // particulas: quando a barrinha dela completa (mesmo instante do olho
+  // piscando), solta 5 pontinhos rosa que se afastam do corpo e somem —
+  // sinal de "potencial acumulado", sem virar um modo furia completo.
+  const PARTICLES = [
+    { base: [34, 42], delay: 0.5, dx: -14, dy: 12 },
+    { base: [46, 40], delay: 3, dx: -9, dy: 18 },
+    { base: [30, 48], delay: 5.5, dx: -17, dy: 6 },
+    { base: [50, 46], delay: 8, dx: -7, dy: 15 },
+    { base: [38, 36], delay: 10, dx: -13, dy: 20 },
+  ];
+  const particleEls = PARTICLES.map((p, i) => {
+    const start = OLHO_FLASH_AT + p.delay;
+    const peak = start + 0.5;
+    const end = OLHO_FLASH_AT + 22;
+    style.push(`
+      @keyframes tinaPart${i}{
+        0%,${start}%{ opacity:0; transform:translate(0,0); }
+        ${peak}%{ opacity:.95; transform:translate(0,0); }
+        ${end}%,100%{ opacity:0; transform:translate(${p.dx}px,${p.dy}px); }
+      }
+      .tinaPart${i}{ animation: tinaPart${i} 11s linear infinite; }
+    `);
+    return `<rect class="tinaPart${i}" x="${p.base[0]}" y="${p.base[1]}" width="3" height="3" fill="${TOKEN_PINK}" filter="url(#tokenGlow)"/>`;
+  }).join('');
+
+  scene.push(`<g id="tina"><g id="tinaBody">${batBody}</g>
+    <rect x="${bW / 2 - TINA_BAR_W / 2}" y="-10" width="${TINA_BAR_W}" height="4" fill="${groundColor}"/>
+    <rect class="tina-barra" x="${bW / 2 - TINA_BAR_W / 2}" y="-10" width="0" height="4" fill="${TOKEN_PINK}"/>
+    ${particleEls}
+  </g>`);
 
   // 3 tokens cuspidos pela Tina sobre os 3 primeiros zumbis: nascem exatamente
   // na posicao dela no instante do lancamento (mesma curva tinaX) e caem em
   // diagonal ate o zumbi-alvo, em vez de so aparecerem já em cima dele.
-  const dropTimes = [11, 37, OLHO_FLASH_AT];
   ZOMBIES.slice(0, 3).forEach((z, i) => {
-    const t = dropTimes[i];
+    const t = TINA_DROPS[i];
     const cx = z.x + zW / 2;
     const startX = tinaX(t) + 30; // boca da Tina, ~centro do corpo dela
     const startY = 46;
