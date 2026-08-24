@@ -63,11 +63,11 @@ Full stack e AI engineer construindo servidores **MCP**, agentes autônomos e ar
 
 ---
 
-### A teia nos commits
+### Agatha caçando zumbis
 
-A Agatha mira nos dois dias com mais commits do último ano e atira teia em cima deles — atualizado todo dia por [GitHub Action](.github/workflows/agatha-teia.yml).
+A Agatha atira teia nos zumbis que avançam, enche a barra de fúria e entra em modo furioso — e a **Tina**, morceguinha amiga dela, sobrevoa soltando tokens que sangram e atrasam a horda.
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/agatha-teia-commits-dark.svg">
-  <img src="assets/agatha-teia-commits.svg" alt="Agatha atirando teia sobre os dias com mais commits do último ano">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/agatha-cacando-zumbis-dark.svg">
+  <img src="assets/agatha-cacando-zumbis.svg" alt="Agatha e Tina caçando zumbis: teia, barra de fúria e modo furioso">
 </picture>
