@@ -97,7 +97,6 @@
 
 <div align="center">
 
-A Agatha atira teia nos zumbis que avançam, enche a barra de **fúria** e entra em modo furioso — e a **Tina**, morceguinha amiga dela, sobrevoa soltando tokens que sangram e atrasam a horda.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/agatha-cacando-zumbis-dark.svg">
