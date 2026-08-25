@@ -18,8 +18,8 @@
 
 📍 Rio Verde, GO — remoto/presencial&nbsp;&nbsp;&middot;&nbsp;&nbsp;🟢 aberto a oportunidades&nbsp;&nbsp;&middot;&nbsp;&nbsp;🕸️ mascote: **Agatha** &amp; **Tina**
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-daniel--faria-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/daniel-fariab32a5523b)
-[![Email](https://img.shields.io/badge/Email-danielcarmo29%40gmail.com-ff3b21?style=for-the-badge&logo=gmail&logoColor=white)](mailto:danielcarmo29@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-daniel--faria-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/daniel-faria-b32a5523b/)
+[![Email](https://img.shields.io/badge/Email-danielcarmo29%40gmail.com-ff3b21?style=flat-square&logo=gmail&logoColor=white)](mailto:danielcarmo29@gmail.com)
 
 </div>
 
