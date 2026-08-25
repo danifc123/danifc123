@@ -35,7 +35,7 @@ const BANNERS = [
   {
     id: 'titulo-zumbis', width: 680, height: 104,
     label: 'ANIMAÇÃO', labelSize: 13, labelLs: 0.18, labelW: 96,
-    title: 'AGATHA CAÇANDO ZUMBIS', titleSize: 28, titleLs: 0.02, titleW: 495,
+    title: 'AGATHA E TINA CAÇANDO ZUMBIS', titleSize: 24, titleLs: 0.02, titleW: 545,
   },
 ];
 
