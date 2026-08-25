@@ -9,9 +9,10 @@
   <img src="assets/tina-voando.svg" alt="Tina, morceguinha pixelada, batendo asa" width="76">
 </picture>
 
-# Daniel Faria do Carmo
-
-### Software Engineer · AI Agent Developer
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/titulo-nome-dark.svg">
+  <img src="assets/titulo-nome.svg" alt="Daniel Faria do Carmo — Software Engineer / AI Agent Developer">
+</picture>
 
 *MCP Protocol · Angular & ASP.NET Core · Python · LLM Integration · RAG*
 
@@ -28,9 +29,12 @@
 
 <br>
 
-## 🕷️ Stack
-
 <div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/titulo-stack-dark.svg">
+  <img src="assets/titulo-stack.svg" alt="Stack">
+</picture>
 
 **Linguagens**
 
@@ -78,14 +82,27 @@
 
 <br>
 
-## 📊 Status de desenvolvimento
-
 <div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/titulo-status-dark.svg">
+  <img src="assets/titulo-status.svg" alt="Status de desenvolvimento">
+</picture>
 
 <table>
 <tr>
-<td valign="top" width="55%"><img src="https://github-readme-stats-fraky.vercel.app/api?username=danifc123&show_icons=true&theme=github_dark&hide_border=true&count_private=true&hide_rank=true" alt="Estatísticas do GitHub" width="100%"></td>
-<td valign="top" width="45%"><img src="https://github-readme-stats-fraky.vercel.app/api/top-langs/?username=danifc123&layout=compact&theme=github_dark&hide_border=true&hide=Rich%20Text%20Format&langs_count=8" alt="Linguagens mais usadas" width="100%"></td>
+<td valign="top" width="55%">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-fraky.vercel.app/api?username=danifc123&show_icons=true&theme=github_dark&hide_border=true&count_private=true&hide_rank=true">
+  <img src="https://github-readme-stats-fraky.vercel.app/api?username=danifc123&show_icons=true&theme=default&hide_border=true&count_private=true&hide_rank=true" alt="Estatísticas do GitHub" width="100%">
+</picture>
+</td>
+<td valign="top" width="45%">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-fraky.vercel.app/api/top-langs/?username=danifc123&layout=compact&theme=github_dark&hide_border=true&hide=Rich%20Text%20Format&langs_count=8">
+  <img src="https://github-readme-stats-fraky.vercel.app/api/top-langs/?username=danifc123&layout=compact&theme=default&hide_border=true&hide=Rich%20Text%20Format&langs_count=8" alt="Linguagens mais usadas" width="100%">
+</picture>
+</td>
 </tr>
 </table>
 
@@ -97,6 +114,10 @@
 
 <div align="center">
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/titulo-zumbis-dark.svg">
+  <img src="assets/titulo-zumbis.svg" alt="Agatha caçando zumbis">
+</picture>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/agatha-cacando-zumbis-dark.svg">
