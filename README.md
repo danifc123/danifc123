@@ -91,8 +91,18 @@
 
 <table>
 <tr>
-<td valign="top" width="55%"><img src="https://github-readme-stats-fraky.vercel.app/api?username=danifc123&show_icons=true&theme=github_dark&hide_border=true&count_private=true&hide_rank=true" alt="Estatísticas do GitHub" width="100%"></td>
-<td valign="top" width="45%"><img src="https://github-readme-stats-fraky.vercel.app/api/top-langs/?username=danifc123&layout=compact&theme=github_dark&hide_border=true&hide=Rich%20Text%20Format&langs_count=8" alt="Linguagens mais usadas" width="100%"></td>
+<td valign="top" width="55%">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-fraky.vercel.app/api?username=danifc123&show_icons=true&theme=github_dark&hide_border=true&count_private=true&hide_rank=true">
+  <img src="https://github-readme-stats-fraky.vercel.app/api?username=danifc123&show_icons=true&theme=default&hide_border=true&count_private=true&hide_rank=true" alt="Estatísticas do GitHub" width="100%">
+</picture>
+</td>
+<td valign="top" width="45%">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-fraky.vercel.app/api/top-langs/?username=danifc123&layout=compact&theme=github_dark&hide_border=true&hide=Rich%20Text%20Format&langs_count=8">
+  <img src="https://github-readme-stats-fraky.vercel.app/api/top-langs/?username=danifc123&layout=compact&theme=default&hide_border=true&hide=Rich%20Text%20Format&langs_count=8" alt="Linguagens mais usadas" width="100%">
+</picture>
+</td>
 </tr>
 </table>
 
