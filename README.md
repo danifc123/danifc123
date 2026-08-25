@@ -110,13 +110,11 @@
 
 <br>
 
-## 🧟 Agatha e Tina caçando zumbis
-
 <div align="center">
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/titulo-zumbis-dark.svg">
-  <img src="assets/titulo-zumbis.svg" alt="Agatha caçando zumbis">
+  <img src="assets/titulo-zumbis.svg" alt="Agatha e Tina caçando zumbis">
 </picture>
 
 <picture>
