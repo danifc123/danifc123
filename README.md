@@ -36,7 +36,7 @@
   <img src="assets/titulo-stack.svg" alt="Stack">
 </picture>
 
-**Linguagens**
+<img src="assets/sub-linguagens.svg" alt="Linguagens">
 
 ![Python](https://img.shields.io/badge/Python-161b22?style=flat-square&logo=python&logoColor=3776AB)
 ![TypeScript](https://img.shields.io/badge/TypeScript-161b22?style=flat-square&logo=typescript&logoColor=3178C6)
@@ -44,7 +44,7 @@
 ![C#](https://img.shields.io/badge/C%23-161b22?style=flat-square&logo=csharp&logoColor=239120)
 ![SQL](https://img.shields.io/badge/SQL-161b22?style=flat-square&logo=postgresql&logoColor=4169E1)
 
-**IA &amp; automação**
+<img src="assets/sub-ia.svg" alt="IA & automação">
 
 ![MCP](https://img.shields.io/badge/MCP_Protocol-ff3b21?style=flat-square)
 ![RAG](https://img.shields.io/badge/RAG-ff3b21?style=flat-square)
@@ -53,26 +53,26 @@
 ![CrewAI](https://img.shields.io/badge/CrewAI-ff3b21?style=flat-square)
 ![FastMCP](https://img.shields.io/badge/FastMCP-ff3b21?style=flat-square)
 
-**Frontend**
+<img src="assets/sub-frontend.svg" alt="Frontend">
 
 ![Angular](https://img.shields.io/badge/Angular-161b22?style=flat-square&logo=angular&logoColor=DD0031)
 ![React](https://img.shields.io/badge/React-161b22?style=flat-square&logo=react&logoColor=61DAFB)
 ![Next.js](https://img.shields.io/badge/Next.js-161b22?style=flat-square&logo=nextdotjs&logoColor=white)
 
-**Backend**
+<img src="assets/sub-backend.svg" alt="Backend">
 
 ![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core-161b22?style=flat-square&logo=dotnet&logoColor=512BD4)
 ![FastAPI](https://img.shields.io/badge/FastAPI-161b22?style=flat-square&logo=fastapi&logoColor=009688)
 ![Node.js](https://img.shields.io/badge/Node.js-161b22?style=flat-square&logo=nodedotjs&logoColor=339933)
 
-**Banco de dados**
+<img src="assets/sub-banco.svg" alt="Banco de dados">
 
 ![SQL Server](https://img.shields.io/badge/SQL_Server-161b22?style=flat-square&logo=microsoftsqlserver&logoColor=CC2927)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-161b22?style=flat-square&logo=postgresql&logoColor=4169E1)
 ![Oracle DB](https://img.shields.io/badge/Oracle_DB-161b22?style=flat-square&logo=oracle&logoColor=F80000)
 ![MongoDB](https://img.shields.io/badge/MongoDB-161b22?style=flat-square&logo=mongodb&logoColor=47A248)
 
-**Ferramentas**
+<img src="assets/sub-ferramentas.svg" alt="Ferramentas">
 
 ![Git](https://img.shields.io/badge/Git-161b22?style=flat-square&logo=git&logoColor=F05032)
 ![Docker](https://img.shields.io/badge/Docker-161b22?style=flat-square&logo=docker&logoColor=2496ED)
