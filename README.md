@@ -44,7 +44,7 @@
 ![C#](https://img.shields.io/badge/C%23-161b22?style=flat-square&logo=csharp&logoColor=239120)
 ![SQL](https://img.shields.io/badge/SQL-161b22?style=flat-square&logo=postgresql&logoColor=4169E1)
 
-<img src="assets/sub-ia.svg" alt="IA & automação">
+<img src="assets/sub-ia.svg" alt="IA &amp; automação">
 
 ![MCP](https://img.shields.io/badge/MCP_Protocol-ff3b21?style=flat-square)
 ![RAG](https://img.shields.io/badge/RAG-ff3b21?style=flat-square)
