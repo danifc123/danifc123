@@ -13,6 +13,12 @@ async function fontDataUri(path, mime) {
   return `data:${mime};base64,${buf.toString('base64')}`;
 }
 
+// SVG e XML: um "&" cru dentro de texto ou atributo invalida o arquivo
+// inteiro (foi o que quebrou "IA & AUTOMAÇÃO"). Escapa antes de interpolar.
+function esc(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
 // larguras medidas de verdade num Chromium headless (getComputedTextLength)
 // pro par fonte/tamanho/texto de cada banner — evita clipping ou sobra de
 // espaco sem precisar rodar um browser toda vez que o script roda.
@@ -53,14 +59,14 @@ const SUBLABELS = [
 const SUB_SIZE = 20, SUB_LS = 0.06, SUB_H = 30;
 
 function buildSubLabel(s, fontBold) {
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${s.width} ${SUB_H}" width="${s.width}" height="${SUB_H}" role="img" aria-label="${s.text}">
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${s.width} ${SUB_H}" width="${s.width}" height="${SUB_H}" role="img" aria-label="${esc(s.text)}">
 <defs>
 <style>
 @font-face { font-family:'Silkscreen'; font-weight:700; src:url(${fontBold}) format('woff2'); }
 text{ font-family:'Silkscreen', 'Courier New', monospace; }
 </style>
 </defs>
-<text x="${s.width / 2}" y="${SUB_SIZE - 2}" text-anchor="middle" font-weight="700" font-size="${SUB_SIZE}" letter-spacing="${SUB_LS}em" fill="#ff3b21">${s.text}</text>
+<text x="${s.width / 2}" y="${SUB_SIZE - 2}" text-anchor="middle" font-weight="700" font-size="${SUB_SIZE}" letter-spacing="${SUB_LS}em" fill="#ff3b21">${esc(s.text)}</text>
 </svg>`;
 }
 
@@ -76,7 +82,7 @@ function buildSvg(b, theme, fontRegular, fontBold) {
   const ruleY = b.height - (b.id === 'titulo-nome' ? 10 : 8);
   const cx = b.width / 2;
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${b.width} ${b.height}" width="${b.width}" height="${b.height}" role="img" aria-label="${b.label}: ${b.title}">
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${b.width} ${b.height}" width="${b.width}" height="${b.height}" role="img" aria-label="${esc(b.label)}: ${esc(b.title)}">
 <defs>
 <style>
 @font-face { font-family:'Silkscreen'; font-weight:400; src:url(${fontRegular}) format('woff2'); }
@@ -85,8 +91,8 @@ text{ font-family:'Silkscreen', 'Courier New', monospace; }
 </style>
 </defs>
 <rect x="0" y="0" width="${b.width}" height="${b.height}" fill="${bg}"/>
-<text x="${cx}" y="${labelY}" text-anchor="middle" font-weight="400" font-size="${b.labelSize}" letter-spacing="${b.labelLs}em" fill="${label}">${b.label}</text>
-<text x="${cx}" y="${titleY}" text-anchor="middle" font-weight="700" font-size="${b.titleSize}" letter-spacing="${b.titleLs}em" fill="${titleColor}">${b.title}</text>
+<text x="${cx}" y="${labelY}" text-anchor="middle" font-weight="400" font-size="${b.labelSize}" letter-spacing="${b.labelLs}em" fill="${label}">${esc(b.label)}</text>
+<text x="${cx}" y="${titleY}" text-anchor="middle" font-weight="700" font-size="${b.titleSize}" letter-spacing="${b.titleLs}em" fill="${titleColor}">${esc(b.title)}</text>
 <rect x="0" y="${ruleY}" width="${b.width}" height="1" fill="${ruleColor}"/>
 </svg>`;
 }
