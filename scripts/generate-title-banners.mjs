@@ -50,7 +50,7 @@ const BANNERS = [
 // fundo nem regua, entao a mesma imagem serve pro tema claro e escuro.
 const SUBLABELS = [
   { id: 'sub-linguagens', text: 'LINGUAGENS', width: 200, textW: 180 },
-  { id: 'sub-ia', text: 'IA & AUTOMAÇÃO', width: 260, textW: 240 },
+  { id: 'sub-ia', text: 'IA E AUTOMAÇÃO', width: 260, textW: 237 },
   { id: 'sub-frontend', text: 'FRONTEND', width: 168, textW: 148 },
   { id: 'sub-backend', text: 'BACKEND', width: 151, textW: 131 },
   { id: 'sub-banco', text: 'BANCO DE DADOS', width: 267, textW: 247 },
